@@ -33,14 +33,14 @@ public class LoginPage extends DriverPage
         return webDriver.findElement(By.id("password"));
     }
 
-    public WebElement getSignUpButton()
-    {
-        return webDriver.findElement(By.id("login"));
-    }
-
     public WebElement getAccountMenuLink()
     {
         return webDriver.findElement(By.id("gwt-debug-AccountMenu-avatar"));
+    }
+
+    public WebElement getLogoutLink()
+    {
+        return webDriver.findElement(By.id("gwt-debug-AccountMenu-logout"));
     }
 
     public WebElement getPasswordError()

@@ -6,6 +6,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import mt.edu.um.pom.ButtonPage;
 import mt.edu.um.pom.DriverPage;
 import mt.edu.um.pom.LoginPage;
 import org.openqa.selenium.By;
@@ -18,7 +19,7 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * Created by waylon on 06/12/2015.
  */
-public class Login extends DriverPage
+public class Login extends ButtonPage
 {
     private LoginPage loginPage = new LoginPage();
 
@@ -48,12 +49,6 @@ public class Login extends DriverPage
         loginPage.getPasswordTextBox().sendKeys(password);
     }
 
-    @And("^click the sign up button")
-    public void signUpClick()
-    {
-        loginPage.getSignUpButton().click();
-    }
-
     @Then("^I am logged in$")
     public void loggedInCheck()
     {
@@ -64,5 +59,22 @@ public class Login extends DriverPage
     public void errorDisplayedCheck(String errorMessage)
     {
         assertEquals(loginPage.getPasswordError().getText(), errorMessage);
+    }
+
+    @And("I login")
+    public void login()
+    {
+        loginPage.getHeaderMenu().click();
+        loginPage.getSignInLink().click();
+        inputEmailAddress("waylonmifsud@gmail.com");
+        inputPassword("3v3rn0t3");
+        getSignUpButton().click();
+    }
+
+    @And("I logout")
+    public void logout()
+    {
+        loginPage.getAccountMenuLink().click();
+        loginPage.getLogoutLink().click();
     }
 }

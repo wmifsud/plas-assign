@@ -4,6 +4,14 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import mt.edu.um.driver.Driver;
+import mt.edu.um.pom.ButtonPage;
+import mt.edu.um.pom.DriverPage;
+import mt.edu.um.pom.LoginPage;
+import mt.edu.um.pom.NotePage;
+import org.apache.commons.logging.Log;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,11 +20,16 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 public class CucumberBeforeAfter
 {
     private static boolean imagesCleaned = false;
 //    private static boolean studentPopulationExecuted = false;
+
+    LoginPage loginPage = null;
+    ButtonPage buttonPage = null;
+    NotePage notePage = null;
 
     // This ensures that this @Before is always executed first
     @Before(order = 0)
@@ -39,6 +52,9 @@ public class CucumberBeforeAfter
 
         Driver.setBrowser(System.getProperty("browser"));
         Driver.startWebDriver();
+        loginPage = new LoginPage();
+        buttonPage = new ButtonPage();
+        notePage = new NotePage();
     }
 
     // This ensures that this @After is always executed last
@@ -58,6 +74,39 @@ public class CucumberBeforeAfter
             Driver.getWebDriver().quit();
             Driver.nullWebDriver();
         }
+    }
+
+    @After(order = 1)
+    public void removeNotes()
+    {
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                System.out.println("Removing created notes");
+                Driver.startWebDriver();
+                loginPage = new LoginPage();
+                buttonPage = new ButtonPage();
+                notePage = new NotePage();
+                Driver.getWebDriver().get("https://evernote.com");
+                loginPage.getSignInButton().click();
+                loginPage.getUserNameTextBox().sendKeys("waylonmifsud@gmail.com");
+                loginPage.getPasswordTextBox().sendKeys("3v3rn0t3");
+                buttonPage.getSignUpButton().click();
+                for (WebElement webElement : notePage.getDeleteButtons())
+                {
+                    webElement.click();
+                    buttonPage.getConfirmationButton().click();
+                }
+                loginPage.getAccountMenuLink().click();
+                loginPage.getLogoutLink().click();
+                System.out.println("Removal of notes complete");
+                if (Driver.getWebDriver() != null)
+                {
+                    Driver.getWebDriver().quit();
+                    Driver.nullWebDriver();
+                }
+            }
+        });
     }
 
 //    @Before(value="@students")
