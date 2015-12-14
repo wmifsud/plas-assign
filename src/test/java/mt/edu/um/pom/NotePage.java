@@ -31,10 +31,10 @@ public class NotePage extends ButtonPage
         return webDriver.findElement(By.id("gwt-debug-NoteTitleView-textBox"));
     }
 
-    public WebElement getNoteBody()
-    {
-        return webDriver.findElement(By.id("gwt-debug-NoteContentEditorView-root"));
-    }
+//    public WebElement getNoteBody()
+//    {
+//        return webDriver.findElement(By.id("gwt-debug-NoteContentEditorView-root"));
+//    }
 
     public WebElement getNoteMessage()
     {
@@ -97,4 +97,27 @@ public class NotePage extends ButtonPage
         //waitForElement("gwt-debug-NoteAttributes-doneButton");
         return webDriver.findElement(By.id("gwt-debug-CreateNotebookDialog-centeredTextBox-textBox"));
     }
+
+    public void createTable(int column, int row)
+    {
+        webDriver.findElement(By.className("GNTMVRYAG"))
+                .findElements(By.className("GNTMVRYDN"))
+                .get(column-1)
+                .findElements(By.tagName(("div")))
+                .get(row-1)
+                .click();
+    }
+
+    public int getTableColumns()
+    {
+//        waitForElement(webDriver.findElement(By.tagName("table")));
+        return webDriver.findElement(By.tagName("table")).findElements(By.tagName("td")).size()+1;
+    }
+
+    public int getTableRows()
+    {
+//        waitForElement(webDriver.findElement(By.tagName("table")));
+        return webDriver.findElement(By.tagName("table")).findElements(By.tagName("tr")).size()+1;
+    }
+
 }

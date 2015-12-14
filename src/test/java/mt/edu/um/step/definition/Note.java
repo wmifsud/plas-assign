@@ -25,18 +25,23 @@ public class Note
 {
     NotePage notePage = new NotePage();
 
-    @Given("I create a note with title as (.*) and body as (.*)")
-    public void createNewNote(String title, String body)
+    @Given("I create (\\d) note with title as (.*) and body as (.*)")
+    public void createNewNote(int count, String title, String body)
     {
-        notePage.getNewNoteButton().click();
+        for (int i = 1; i <= count; i++)
+        {
+            notePage.getNewNoteButton().click();
 
-        notePage.getNoteMessage().click();
-        notePage.getNoteMessage().sendKeys(body);
+            notePage.getNoteMessage().click();
+            notePage.getNoteMessage().sendKeys(body);
 
-        notePage.getNoteTitle().click();
-        notePage.getNoteTitle().sendKeys(title);
+            notePage.getNoteTitle().click();
+            notePage.getNoteTitle().sendKeys(i + " " + title);
 
-        notePage.getDoneButton().click();
+            notePage.getDoneButton().click();
+
+            notePage.getNoteMessage().click();
+        }
     }
 
 //    @And("I set the (title|body|notebook title) as (.*)")
@@ -65,6 +70,19 @@ public class Note
         {
             TestCase.fail(String.join(" ", noteTitle, "is not in the notes list"));
         }
+    }
+
+    @And("^I create a (\\d)x(\\d) table$")
+    public void createTable(int column, int row)
+    {
+        notePage.createTable(column, row);
+    }
+
+    @Then("^the (\\d)x(\\d) table is created$")
+    public void assertTableCreation(int column, int row)
+    {
+        //assertEquals(column, notePage.getTableColumns()/2);
+        assertEquals(row, notePage.getTableRows());
     }
 
 //    @Given("^I want to delete notebook$")

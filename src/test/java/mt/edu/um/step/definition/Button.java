@@ -19,9 +19,9 @@ public class Button extends DriverPage
             case "sign up":
                 buttonPage.getSignUpButton().click();
                 break;
-//            case "done":
-//                buttonPage.getDoneButton().click();
-//                break;
+            case "table":
+                buttonPage.getTableButton().click();
+                break;
             case "notebook":
                 buttonPage.getNoteBookButton().click();
                 break;
@@ -31,6 +31,8 @@ public class Button extends DriverPage
             case "shortcuts":
                 buttonPage.getShortcutsButton().click();
                 break;
+            case "options":
+                buttonPage.getOptionsButton().click();
             case "create new notebook":
                 buttonPage.getCreateNoteBookButton().click();
                 break;

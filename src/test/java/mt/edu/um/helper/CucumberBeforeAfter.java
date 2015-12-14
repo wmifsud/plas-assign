@@ -76,38 +76,38 @@ public class CucumberBeforeAfter
         }
     }
 
-    @After(order = 1)
-    public void removeNotes()
-    {
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            @Override
-            public void run() {
-                System.out.println("Removing created notes");
-                Driver.startWebDriver();
-                loginPage = new LoginPage();
-                buttonPage = new ButtonPage();
-                notePage = new NotePage();
-                Driver.getWebDriver().get("https://evernote.com");
-                loginPage.getSignInButton().click();
-                loginPage.getUserNameTextBox().sendKeys("waylonmifsud@gmail.com");
-                loginPage.getPasswordTextBox().sendKeys("3v3rn0t3");
-                buttonPage.getSignUpButton().click();
-                for (WebElement webElement : notePage.getDeleteButtons())
-                {
-                    webElement.click();
-                    buttonPage.getConfirmationButton().click();
-                }
-                loginPage.getAccountMenuLink().click();
-                loginPage.getLogoutLink().click();
-                System.out.println("Removal of notes complete");
-                if (Driver.getWebDriver() != null)
-                {
-                    Driver.getWebDriver().quit();
-                    Driver.nullWebDriver();
-                }
-            }
-        });
-    }
+//    @After(order = 1)
+//    public void removeNotes()
+//    {
+//        Runtime.getRuntime().addShutdownHook(new Thread() {
+//            @Override
+//            public void run() {
+//                System.out.println("Removing created notes");
+//                Driver.startWebDriver();
+//                loginPage = new LoginPage();
+//                buttonPage = new ButtonPage();
+//                notePage = new NotePage();
+//                Driver.getWebDriver().get("https://evernote.com");
+//                loginPage.getSignInButton().click();
+//                loginPage.getUserNameTextBox().sendKeys("waylonmifsud@gmail.com");
+//                loginPage.getPasswordTextBox().sendKeys("3v3rn0t3");
+//                buttonPage.getSignUpButton().click();
+//                for (WebElement webElement : notePage.getDeleteButtons())
+//                {
+//                    webElement.click();
+//                    buttonPage.getConfirmationButton().click();
+//                }
+//                loginPage.getAccountMenuLink().click();
+//                loginPage.getLogoutLink().click();
+//                System.out.println("Removal of notes complete");
+//                if (Driver.getWebDriver() != null)
+//                {
+//                    Driver.getWebDriver().quit();
+//                    Driver.nullWebDriver();
+//                }
+//            }
+//        });
+//    }
 
 //    @Before(value="@students")
 //    public void populateStudentData() {

@@ -44,4 +44,14 @@ public class ButtonPage extends DriverPage
     {
         return webDriver.findElement(By.id("gwt-debug-Sidebar-shortcutsButton-container"));
     }
+
+    public WebElement getTableButton()
+    {
+        return webDriver.findElement(By.id("gwt-debug-FormattingBar-tableButton"));
+    }
+
+    public WebElement getOptionsButton()
+    {
+        return webDriver.findElement(By.id("focus-NotesView-Subheader-OptionsButton"));
+    }
 }
