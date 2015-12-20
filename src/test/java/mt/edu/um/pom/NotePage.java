@@ -1,13 +1,15 @@
 package mt.edu.um.pom;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+import com.gargoylesoftware.htmlunit.javascript.host.Map;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by waylon on 06/12/2015.
@@ -94,30 +96,76 @@ public class NotePage extends ButtonPage
 
     public WebElement getNoteBookTitle()
     {
-        //waitForElement("gwt-debug-NoteAttributes-doneButton");
         return webDriver.findElement(By.id("gwt-debug-CreateNotebookDialog-centeredTextBox-textBox"));
     }
 
     public void createTable(int column, int row)
     {
-        webDriver.findElement(By.className("GNTMVRYAG"))
-                .findElements(By.className("GNTMVRYDN"))
-                .get(column-1)
-                .findElements(By.tagName(("div")))
-                .get(row-1)
-                .click();
+        List<WebElement> divElements = webDriver.findElement(By.id("gwt-debug-MetaBarView-root")).findElements(By.tagName("div"));
+        HashMap<String, Integer> hash = new HashMap<>();
+        int counter;
+        for (WebElement divElement : divElements)
+        {
+            if (divElement.getAttribute("class") != null && "".equals(divElement.getText()))
+            {
+                if (hash.get(divElement.getAttribute("class")) == null)
+                {
+                    hash.put(divElement.getAttribute("class"), 1);
+                }
+                else
+                {
+                    counter = hash.get(divElement.getAttribute("class")) + 1;
+                    hash.remove(divElement.getAttribute("class"));
+                    hash.put(divElement.getAttribute("class"), counter);
+                }
+            }
+        }
+
+        String rowClass = null;
+        String columnClass = null;
+        for (java.util.Map.Entry<String, Integer> entry : hash.entrySet())
+        {
+            if (entry.getValue().equals(36))
+            {
+                rowClass = entry.getKey();
+                break;
+            }
+        }
+
+        if (rowClass == null)
+        {
+            throw new ElementNotFoundException("div", "table", "cell");
+        }
+
+
+        columnClass = webDriver.findElement(By.className(rowClass)).findElement(By.xpath("..")).getAttribute("class");
+
+        if (!hash.get(columnClass).equals(6))
+        {
+            throw new ElementNotFoundException("div", "table", "cell");
+        }
+
+        webDriver.findElements(By.className(columnClass)).get(row-1).findElements(By.className(rowClass)).get(column-1).click();
     }
 
-    public int getTableColumns()
+    public List<WebElement> getTableRows()
     {
-//        waitForElement(webDriver.findElement(By.tagName("table")));
-        return webDriver.findElement(By.tagName("table")).findElements(By.tagName("td")).size()+1;
+        WebElement webElement = webDriver.findElement(By.id("EN_IframePanel_0"));
+//        try
+//        {
+//            webElement = getNoteMessage();
+//        }
+//        catch (NoSuchElementException | ElementNotVisibleException e)
+//        {
+//            webElement = webDriver.findElement(By.id("EN_IframePanel_0"));
+//        }
+//        ;
+        return webDriver.switchTo().frame(webElement).findElements(By.tagName("tr"));
     }
 
-    public int getTableRows()
+    public int getTableColumns(List<WebElement> rowElements)
     {
-//        waitForElement(webDriver.findElement(By.tagName("table")));
-        return webDriver.findElement(By.tagName("table")).findElements(By.tagName("tr")).size()+1;
+        return rowElements.stream().findFirst().get().findElements(By.tagName("td")).size();
     }
 
 }

@@ -10,6 +10,8 @@ import mt.edu.um.pom.ButtonPage;
 import mt.edu.um.pom.DriverPage;
 import mt.edu.um.pom.LoginPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 
@@ -26,14 +28,17 @@ public class Login extends ButtonPage
     @When("^I click on the sign in link from (.*)$")
     public void signInClick(String signInLinkFrom)
     {
-        if (signInLinkFrom.endsWith("sign in button"))
+        switch (signInLinkFrom)
         {
-            loginPage.getSignInButton().click();
-        }
-        else
-        {
-            loginPage.getHeaderMenu().click();
-            loginPage.getSignInLink().click();
+            case "sign in button":
+                loginPage.getSignInButton().click();
+                break;
+            case "sign in header button":
+                loginPage.getHeaderSignInLink().click();
+                break;
+            default:
+                loginPage.getHeaderMenu().click();
+                loginPage.getSignInLink().click();
         }
     }
 
@@ -64,8 +69,7 @@ public class Login extends ButtonPage
     @And("I login")
     public void login()
     {
-        loginPage.getHeaderMenu().click();
-        loginPage.getSignInLink().click();
+        loginPage.getSignInButton().click();
         inputEmailAddress("waylonmifsud@gmail.com");
         inputPassword("3v3rn0t3");
         getSignUpButton().click();

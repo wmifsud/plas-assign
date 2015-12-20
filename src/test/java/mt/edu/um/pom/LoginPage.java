@@ -1,7 +1,10 @@
 package mt.edu.um.pom;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 /**
  * Created by waylon on 06/12/2015.
@@ -16,6 +19,23 @@ public class LoginPage extends DriverPage
     public WebElement getSignInLink()
     {
         return webDriver.findElement(By.className("js-sign-in-menu"));
+    }
+
+    public WebElement getHeaderSignInLink()
+    {
+        WebElement signInLink = null;
+        List<WebElement> webElementList = webDriver.findElement(By.className("global-header")).findElements(By.tagName("a"));
+
+        for (WebElement webElement : webElementList)
+        {
+            if ("sign-in".equals(webElement.getAttribute("data-action")))
+            {
+                signInLink = webElement;
+                break;
+            }
+        }
+
+        return signInLink;
     }
 
     public WebElement getHeaderMenu()

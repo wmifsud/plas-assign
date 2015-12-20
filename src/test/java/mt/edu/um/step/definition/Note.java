@@ -81,8 +81,9 @@ public class Note
     @Then("^the (\\d)x(\\d) table is created$")
     public void assertTableCreation(int column, int row)
     {
-        //assertEquals(column, notePage.getTableColumns()/2);
-        assertEquals(row, notePage.getTableRows());
+        List<WebElement> rowElements = notePage.getTableRows();
+        assertEquals(row, rowElements.size());
+        assertEquals(column, notePage.getTableColumns(rowElements));
     }
 
 //    @Given("^I want to delete notebook$")
