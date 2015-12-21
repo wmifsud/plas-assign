@@ -5,18 +5,11 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import mt.edu.um.driver.Driver;
 import mt.edu.um.pom.ButtonPage;
-import mt.edu.um.pom.DriverPage;
 import mt.edu.um.pom.LoginPage;
 import mt.edu.um.pom.NotePage;
-import org.apache.commons.logging.Log;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -74,6 +67,31 @@ public class CucumberBeforeAfter
             Driver.getWebDriver().quit();
             Driver.nullWebDriver();
         }
+    }
+
+    @After(order = 1)
+    public void removeNotes() throws InterruptedException
+    {
+        System.out.println("Removing created notes");
+        Driver.getWebDriver().get("https://evernote.com");
+        loginPage.getSignInButton().click();
+        //loginPage.getUserNameTextBox().sendKeys("waylonmifsud@gmail.com");
+//        loginPage.getPasswordTextBox().sendKeys("3v3rn0t3");
+//        buttonPage.getSignUpButton().click();
+
+        notePage.getWebElementList("NotesView-ScrollWindow", "qa-title");
+
+        List<WebElement> deleteElements;
+        do
+        {
+            deleteElements = notePage.getDeleteButtons();
+            deleteElements.stream().findFirst().get().click();
+            buttonPage.getConfirmationButton().click();
+        } while (deleteElements.size() > 1);
+
+        loginPage.getAccountMenuLink().click();
+        loginPage.getLogoutLink().click();
+        System.out.println("Removal of notes complete");
     }
 
 //    @After(order = 1)

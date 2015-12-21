@@ -1,22 +1,13 @@
 package mt.edu.um.step.definition;
 
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import junit.framework.Assert;
-import junit.framework.TestCase;
 import mt.edu.um.pom.ButtonPage;
-import mt.edu.um.pom.DriverPage;
 import mt.edu.um.pom.LoginPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-import java.util.List;
 
-import static junit.framework.TestCase.assertTrue;
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 /**
  * Created by waylon on 06/12/2015.
@@ -66,10 +57,18 @@ public class Login extends ButtonPage
         assertEquals(loginPage.getPasswordError().getText(), errorMessage);
     }
 
-    @And("I login")
-    public void login()
+    @And("I login with (sign in|header) link")
+    public void login(String method)
     {
-        loginPage.getSignInButton().click();
+        if ("sign in".equals(method))
+        {
+            loginPage.getSignInButton().click();
+        }
+        else
+        {
+            loginPage.getHeaderSignInLink().click();
+        }
+
         inputEmailAddress("waylonmifsud@gmail.com");
         inputPassword("3v3rn0t3");
         getSignUpButton().click();

@@ -2,8 +2,6 @@ package mt.edu.um.pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by waylon on 08/12/2015.
@@ -52,6 +50,6 @@ public class ButtonPage extends DriverPage
 
     public WebElement getOptionsButton()
     {
-        return webDriver.findElement(By.id("focus-NotesView-Subheader-OptionsButton"));
+        return webDriver.findElement(By.className("focus-NotesView-Subheader-OptionsButton"));
     }
 }

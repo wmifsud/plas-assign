@@ -3,20 +3,13 @@ package mt.edu.um.step.definition;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import junit.framework.TestCase;
-import mt.edu.um.driver.Driver;
-import mt.edu.um.pom.ButtonPage;
-import mt.edu.um.pom.LoginPage;
 import mt.edu.um.pom.NotePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.util.List;
-
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
+
+//import org.openqa.selenium.WebElement;
 
 /**
  * Created by waylon on 06/12/2015.
@@ -36,7 +29,15 @@ public class Note
             notePage.getNoteMessage().sendKeys(body);
 
             notePage.getNoteTitle().click();
-            notePage.getNoteTitle().sendKeys(i + " " + title);
+
+            if (count > 1)
+            {
+                notePage.getNoteTitle().sendKeys(i + " " + title);
+            }
+            else
+            {
+                notePage.getNoteTitle().sendKeys(title);
+            }
 
             notePage.getDoneButton().click();
 
@@ -81,9 +82,22 @@ public class Note
     @Then("^the (\\d)x(\\d) table is created$")
     public void assertTableCreation(int column, int row)
     {
-        List<WebElement> rowElements = notePage.getTableRows();
-        assertEquals(row, rowElements.size());
-        assertEquals(column, notePage.getTableColumns(rowElements));
+        NotePage.Table table = notePage.retrieveTable();
+
+        assertEquals(row, table.getRowCount());
+        assertEquals(column, table.getColumnCount());
+    }
+
+    @And("^I select the (.*) sort order")
+    public void selectSortMethodOption(String sortMethod)
+    {
+        notePage.getSortOption(sortMethod).click();
+    }
+
+    @Then("^the sort order should be (Date Created|Title) in (.*) sort order$")
+    public void assertSortingIsCorrect(String parameter, String order) throws InterruptedException
+    {
+        assertTrue(notePage.assertSortMethod(parameter, order));
     }
 
 //    @Given("^I want to delete notebook$")

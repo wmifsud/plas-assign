@@ -33,6 +33,7 @@ public class Button extends DriverPage
                 break;
             case "options":
                 buttonPage.getOptionsButton().click();
+                break;
             case "create new notebook":
                 buttonPage.getCreateNoteBookButton().click();
                 break;
