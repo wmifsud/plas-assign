@@ -4,10 +4,7 @@ import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by waylon on 06/12/2015.
@@ -202,69 +199,116 @@ public class NotePage extends ButtonPage
 
     public boolean assertSortMethod(String parameter, String order) throws InterruptedException
     {
-        List<String> titles = new ArrayList<>();
+//        List<String> textList = new ArrayList<>();
         List<WebElement> webElements;
-        List<String> tmp;
+//        List<String> tmp;
 
-        switch (parameter)
-        {
-            case "Title":
-                webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-title"));
+        getNoteMessage().click();
 
-                for (WebElement webElement : webElements)
-                {
-                    titles.add(webElement.getText());
-                }
-
-                tmp = titles;
-
-                if ("ascending".equals(order))
-                {
-                    Collections.sort(tmp);
-                    System.out.println("Sort 1 to 3");
-                }
-                else
-                {
-                    Collections.sort(tmp, Collections.reverseOrder());
-                    System.out.println("Sort 3 to 1");
-                }
-                System.out.println("logging titles...");
-                for (String title : titles)
-                {
-                    System.out.println(title);
-                }
-
-                System.out.println("logging tmp...");
-                for (String tm : tmp)
-                {
-                    System.out.println(tm);
-                }
-
-                return tmp.equals(titles);
-        }
-
-        return false;
-
-//            case "Date Created":
-//
-//                webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-date"));
+//        switch (parameter)
+//        {
+//            case "Title":
+//                webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-title"));
 //
 //                for (WebElement webElement : webElements)
 //                {
-//                    titles.add(webElement.getText());
-//                    if ("newest first".equals(order) && webDate.getAttribute("data-reactid").contains("$0") && webDate.getText().contains("MOMENTS"))
-//                    {
-//                        return true;
-//                    }
-//                    else if ("oldest first".equals(order) && webDate.getAttribute("data-reactid").contains("$0") && webDate.getText().contains("MOMENTS"))
+//                    textList.add(webElement.getText());
 //                }
-//                return false;
+//
+//                tmp = textList;
+//
+//                if ("ascending".equals(order))
+//                {
+//                    Collections.sort(tmp);
+//                    System.out.println("Sort 1 to 3");
+//                }
+//                else
+//                {
+//                    Collections.sort(tmp, Collections.reverseOrder());
+//                    System.out.println("Sort 3 to 1");
+//                }
+//                System.out.println("logging titles...");
+//                for (String title : textList)
+//                {
+//                    System.out.println(title);
+//                }
+//
+//                System.out.println("logging tmp...");
+//                for (String tm : tmp)
+//                {
+//                    System.out.println(tm);
+//                }
+//
+//                return tmp.equals(textList);
+//            case "Date Created":
+                if ("Date Created".equals(parameter))
+                {
+                    webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-date"));
+                }
+                else
+                {
+                    webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-title"));
+                }
+
+                Map<Integer, String> sorted = fetchCorrectSortList(webElements, true);
+                int value;
+                int previousValue = -1;
+                String text;
+                for (int i = 0; i < sorted.size(); i++)
+                {
+                    text = sorted.get(i);
+                    value = Integer.parseInt(text.substring(0, 2).trim());
+
+                    System.out.println("Value: " + value);
+                    System.out.println("Previous Value: " + previousValue);
+
+                    if (previousValue != -1)
+                    {
+                        switch (order)
+                        {
+                            case "newest first":
+                            case "ascending":
+                                if (previousValue > value)
+                                {
+                                    System.out.println("List not in " + order + " order!");
+                                    return false;
+                                }
+                                break;
+                            case "oldest first":
+                            case "descending":
+                                if (previousValue < value)
+                                {
+                                    System.out.println("List not in " + order + " order!");
+                                    return false;
+                                }
+                                break;
+                            default: throw new IllegalArgumentException("Unsupported sorting option:" + order);
+                        }
+                    }
+                    previousValue = value;
+                }
+
+                return true;
         }
 
 //        Date Created (oldest first)
 //        ii. Date Created (newest first)
 //        iii. Title (ascending)
 //        iv. Title (descending)
+
+    public Map<Integer, String> fetchCorrectSortList(List<WebElement> webElements, boolean isAscending)
+    {
+        HashMap<Integer, String> hashMap = new HashMap<>();
+
+        String attribute;
+        for (WebElement webElement : webElements)
+        {
+            attribute = webElement.getAttribute("data-reactid");
+            hashMap.put(Integer.parseInt(attribute.substring(attribute.indexOf("$")+1, attribute.indexOf("$")+2)), webElement.getText());
+        }
+
+        return isAscending ? new TreeMap<>(hashMap) : new TreeMap<>(hashMap).descendingMap();
+    }
 
 
     public class Table

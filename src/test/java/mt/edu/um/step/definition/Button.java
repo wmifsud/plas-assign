@@ -40,6 +40,9 @@ public class Button extends DriverPage
             case "confirm create notebook":
                 buttonPage.getConfirmCreateNoteBookButton().click();
                 break;
+            case "search":
+                buttonPage.getSearchButton().click();
+                break;
             default:
                 throw new IllegalArgumentException("Button not supported: " + buttonName);
 

@@ -68,8 +68,8 @@ public class CucumberBeforeAfter
             Driver.nullWebDriver();
         }
     }
-
-    @After(order = 1)
+//,order = 1
+    @After(value = "@note,@search")
     public void removeNotes() throws InterruptedException
     {
         System.out.println("Removing created notes");

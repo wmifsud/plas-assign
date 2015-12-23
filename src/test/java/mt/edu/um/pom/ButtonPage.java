@@ -52,4 +52,9 @@ public class ButtonPage extends DriverPage
     {
         return webDriver.findElement(By.className("focus-NotesView-Subheader-OptionsButton"));
     }
+
+    public WebElement getSearchButton()
+    {
+        return webDriver.findElement(By.id("gwt-debug-Sidebar-searchButton-container"));
+    }
 }
