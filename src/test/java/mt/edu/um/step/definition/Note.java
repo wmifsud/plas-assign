@@ -21,6 +21,7 @@ public class Note
     @Given("I create (\\d) note with title as (.*) and body as (.*)")
     public void createNewNote(int count, String title, String body)
     {
+        notePage.waitForElement(notePage.getNewNoteButton());
         for (int i = 1; i <= count; i++)
         {
             notePage.getNewNoteButton().click();

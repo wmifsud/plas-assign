@@ -68,17 +68,13 @@ public class CucumberBeforeAfter
             Driver.nullWebDriver();
         }
     }
-//,order = 1
+
     @After(value = "@note,@search")
     public void removeNotes() throws InterruptedException
     {
         System.out.println("Removing created notes");
         Driver.getWebDriver().get("https://evernote.com");
         loginPage.getSignInButton().click();
-        //loginPage.getUserNameTextBox().sendKeys("waylonmifsud@gmail.com");
-//        loginPage.getPasswordTextBox().sendKeys("3v3rn0t3");
-//        buttonPage.getSignUpButton().click();
-
         notePage.getWebElementList("NotesView-ScrollWindow", "qa-title");
 
         List<WebElement> deleteElements;
@@ -93,6 +89,26 @@ public class CucumberBeforeAfter
         loginPage.getLogoutLink().click();
         System.out.println("Removal of notes complete");
     }
+
+//    @After(value = "@notebook")
+//    public void removeNoteBooks() throws InterruptedException
+//    {
+//        System.out.println("Removing created note books");
+//        Driver.getWebDriver().get("https://evernote.com");
+//        loginPage.getSignInButton().click();
+//        buttonPage.getNoteBookButton().click();
+//
+//        List<WebElement> deleteElements = notePage.getDeleteButtons();
+//        System.out.println(deleteElements.stream().findFirst().get().getText());
+//        deleteElements.stream().findFirst().get().click();
+//        buttonPage.getConfirmationButton().click();
+//
+//        loginPage.getAccountMenuLink().click();
+//        loginPage.getLogoutLink().click();
+//        System.out.println("Removal of note books complete");
+//    }
+
+
 
 //    @After(order = 1)
 //    public void removeNotes()
