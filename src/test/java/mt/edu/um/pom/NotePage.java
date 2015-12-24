@@ -3,6 +3,7 @@ package mt.edu.um.pom;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
@@ -331,6 +332,12 @@ public class NotePage extends ButtonPage
         {
             return columnCount;
         }
+    }
+
+    public void hoverOn(WebElement webElement)
+    {
+        Actions action = new Actions(webDriver);
+        action.moveToElement(webElement).build().perform();
     }
 
 }

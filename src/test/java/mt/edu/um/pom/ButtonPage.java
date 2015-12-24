@@ -57,4 +57,9 @@ public class ButtonPage extends DriverPage
     {
         return webDriver.findElement(By.id("gwt-debug-Sidebar-searchButton-container"));
     }
+
+    public WebElement getEmptyTrashButton()
+    {
+        return webDriver.findElement(By.id("gwt-debug-trashHeaderContainer")).findElement(By.tagName("button"));
+    }
 }

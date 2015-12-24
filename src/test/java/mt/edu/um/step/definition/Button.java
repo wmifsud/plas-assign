@@ -43,6 +43,9 @@ public class Button extends DriverPage
             case "search":
                 buttonPage.getSearchButton().click();
                 break;
+            case "empty trash":
+                buttonPage.getEmptyTrashButton().click();
+                break;
             default:
                 throw new IllegalArgumentException("Button not supported: " + buttonName);
 
