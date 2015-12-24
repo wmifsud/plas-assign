@@ -10,8 +10,5 @@ Feature: Notebook
     And I click the create new notebook button
     And I set the notebook title as test notebook
     And I create 1 note with title as test title a and body as test body a
-#    And I click the confirm create notebook button
-
-#  @notebook
-#  Scenario: Delete notebook
-#    Given I want to delete notebook
+    Then test title a note is under the test notebook notebook
+    And delete test notebook notebook
