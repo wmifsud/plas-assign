@@ -63,12 +63,17 @@ public class ButtonPage extends DriverPage
         return webDriver.findElement(By.className("qa-trash"));
     }
 
-    public WebElement getEmptyTrashButton()
+    public WebElement getTrashHeader()
     {
-        return webDriver.findElement(By.id("gwt-debug-trashHeaderContainer")).findElement(By.tagName("button"));
+        return webDriver.findElement(By.id("gwt-debug-trashHeaderContainer"));
     }
 
-    public WebElement getTrashNotesCount()
+    public WebElement getEmptyTrashButton()
+    {
+        return getTrashHeader().findElement(By.tagName("button"));
+    }
+
+    public WebElement getNotesCount()
     {
         return webDriver.findElement(By.className("qa-notesCount"));
     }

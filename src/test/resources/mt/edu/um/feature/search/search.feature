@@ -1,3 +1,4 @@
+@all
 @search
 Feature: Search
   Background:

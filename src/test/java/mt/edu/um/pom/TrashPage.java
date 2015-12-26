@@ -12,14 +12,16 @@ public class TrashPage extends NotePage
 {
     public void deleteAllNotes()
     {
-        getWebElementList("NotesView-ScrollWindow", "qa-title");
-
         List<WebElement> deleteElements;
         do
         {
             deleteElements = getDeleteButtons();
-            deleteElements.stream().findFirst().get().click();
-            getConfirmationButton().click();
+            if (deleteElements.stream().findFirst().isPresent())
+            {
+                deleteElements.stream().findFirst().get().click();
+                waitForElement(getConfirmationButton());
+                getConfirmationButton().click();
+            }
         } while (deleteElements.size() > 1);
     }
 

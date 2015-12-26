@@ -1,3 +1,4 @@
+@all
 @login
 Feature: Login
   @1a

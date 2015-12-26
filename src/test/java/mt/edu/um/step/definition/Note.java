@@ -6,7 +6,7 @@ import cucumber.api.java.en.Then;
 import junit.framework.TestCase;
 import mt.edu.um.pom.NotePage;
 
-import static junit.framework.Assert.assertTrue;
+import static junit.framework.TestCase.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
 //import org.openqa.selenium.WebElement;

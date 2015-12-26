@@ -1,3 +1,4 @@
+@all
 @notebook
 Feature: Notebook
   Background:

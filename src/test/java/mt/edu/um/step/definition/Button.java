@@ -3,7 +3,6 @@ package mt.edu.um.step.definition;
 import cucumber.api.java.en.And;
 import mt.edu.um.pom.ButtonPage;
 import mt.edu.um.pom.DriverPage;
-import org.openqa.selenium.ElementNotVisibleException;
 
 /**
  * Created by waylon on 08/12/2015.
@@ -49,19 +48,16 @@ public class Button extends DriverPage
                 buttonPage.getSearchButton().click();
                 break;
             case "trash":
+                waitForElement(buttonPage.getTrashButton());
                 buttonPage.getTrashButton().click();
                 break;
             case "empty trash":
-                try
+                if (!buttonPage.getNotesCount().getText().startsWith("0"))
                 {
                     buttonPage.getEmptyTrashButton().click();
                     buttonPage.getConfirmationButton().click();
                 }
-                catch (ElementNotVisibleException e)
-                {
-                    System.out.println("trash is empty. continue...");
-                }
-                waitForTextInElement(buttonPage.getTrashNotesCount(), "0 notes");
+                waitForTextInElement(buttonPage.getNotesCount(), "0 notes");
                 break;
             default:
                 throw new IllegalArgumentException("Button not supported: " + buttonName);

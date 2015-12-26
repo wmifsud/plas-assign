@@ -4,7 +4,6 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import mt.edu.um.driver.Driver;
-import mt.edu.um.pom.ButtonPage;
 import mt.edu.um.pom.LoginPage;
 import mt.edu.um.pom.NotePage;
 import org.openqa.selenium.WebElement;
@@ -21,7 +20,6 @@ public class CucumberBeforeAfter
 //    private static boolean studentPopulationExecuted = false;
 
     LoginPage loginPage = null;
-    ButtonPage buttonPage = null;
     NotePage notePage = null;
 
     // This ensures that this @Before is always executed first
@@ -46,7 +44,6 @@ public class CucumberBeforeAfter
         Driver.setBrowser(System.getProperty("browser"));
         Driver.startWebDriver();
         loginPage = new LoginPage();
-        buttonPage = new ButtonPage();
         notePage = new NotePage();
     }
 
@@ -69,7 +66,7 @@ public class CucumberBeforeAfter
         }
     }
 
-    @After(value = "@note,@search")
+    @After(value = "@note,@search,@trash")
     public void removeNotes() throws InterruptedException
     {
         System.out.println("Removing created notes");
@@ -81,8 +78,12 @@ public class CucumberBeforeAfter
         do
         {
             deleteElements = notePage.getDeleteButtons();
-            deleteElements.stream().findFirst().get().click();
-            buttonPage.getConfirmationButton().click();
+            if (deleteElements.stream().findFirst().isPresent())
+            {
+                deleteElements.stream().findFirst().get().click();
+                notePage.waitForElement(notePage.getConfirmationButton());
+                notePage.getConfirmationButton().click();
+            }
         } while (deleteElements.size() > 1);
 
         loginPage.getAccountMenuLink().click();
