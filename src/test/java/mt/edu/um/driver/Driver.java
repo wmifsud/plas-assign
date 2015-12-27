@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -86,10 +86,10 @@ public class Driver
         }
     }
 
-    public static String getBrowser()
-    {
-        return browser;
-    }
+//    public static String getBrowser()
+//    {
+//        return browser;
+//    }
 
     public static void setBrowser(String browser)
     {

@@ -7,7 +7,8 @@ Feature: Trash
 
   @5a
   Scenario: Trash functionality
-    Given I click the notebook button
+    Given I create 1 note with title as test title b and body as test body b
+    And I click the notebook button
     And I click the trash button
     And I click the empty trash button
     And I click the notes button
@@ -20,8 +21,6 @@ Feature: Trash
     Then the 3 test title a is in the notes list
     And I click the empty trash button
     Then the trash is empty
-    And I click the notes button
-    And I create 1 note with title as test title a and body as test body a
 
   @5b
   Scenario: Trash Restore

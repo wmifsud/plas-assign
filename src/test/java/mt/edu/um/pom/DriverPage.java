@@ -4,11 +4,14 @@ import mt.edu.um.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 /**
- * Created by waylon on 06/12/2015.
+ * @author waylon on 06/12/2015.
  */
 public class DriverPage
 {
@@ -22,5 +25,32 @@ public class DriverPage
     public void waitForElement(WebElement webElement)
     {
         new WebDriverWait(Driver.getWebDriver(), 30).until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    public void waitForElementVisibility(WebElement webElement)
+    {
+        new WebDriverWait(Driver.getWebDriver(), 30).until(ExpectedConditions.visibilityOf(webElement));
+    }
+
+    public List<WebElement> getWebElementList(String retrieveElementsByClasses)
+    {
+        return webDriver.findElements(By.className(retrieveElementsByClasses));
+    }
+
+    public List<WebElement> getDeleteButtons()
+    {
+        waitForElement(webDriver.findElement(By.id("gwt-debug-Sidebar-newNoteButton-container")));
+        return webDriver.findElement(By.className("NotesView-ScrollWindow")).findElements(By.className("qa-deleteButton"));
+    }
+
+    public void hoverOn(WebElement webElement)
+    {
+        Actions action = new Actions(webDriver);
+        action.moveToElement(webElement).build().perform();
+    }
+
+    public WebElement getConfirmationButton()
+    {
+        return webDriver.findElement(By.id("gwt-debug-ConfirmationDialog-confirm"));
     }
 }

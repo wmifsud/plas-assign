@@ -2,6 +2,7 @@ package mt.edu.um.step.definition;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import mt.edu.um.pom.ButtonPage;
 import mt.edu.um.pom.NotebookPage;
 import org.openqa.selenium.Keys;
 
@@ -9,9 +10,9 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by waylon on 23/12/2015.
+ * @author waylon on 23/12/2015.
  */
-public class Notebook
+public class Notebook extends ButtonPage
 {
     NotebookPage notebookPage = new NotebookPage();
 
@@ -32,11 +33,11 @@ public class Notebook
     }
 
     @And(("^delete (.*) notebook$"))
-    public void deleteNotebook(String notebook)
+    public void deleteNotebook(String notebook) throws InterruptedException
     {
-        notebookPage.waitForElement(notebookPage.getNoteBookButton());
-        notebookPage.getNoteBookButton().click();
-
+        notebookPage.waitForElement(getNoteBookButton());
+        getNoteBookButton().click();
+        Thread.sleep(2000);
         notebookPage.deleteNotebook(notebook);
     }
 }

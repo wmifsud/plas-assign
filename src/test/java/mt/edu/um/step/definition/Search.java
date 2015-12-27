@@ -5,7 +5,7 @@ import mt.edu.um.pom.SearchPage;
 import org.openqa.selenium.Keys;
 
 /**
- * Created by waylon on 23/12/2015.
+ * @author waylon on 23/12/2015.
  */
 public class Search
 {

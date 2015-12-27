@@ -3,15 +3,22 @@ package mt.edu.um.pom;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
- * Created by waylon on 06/12/2015.
+ * @author waylon on 06/12/2015.
  */
-public class NotePage extends ButtonPage
+public class NotePage extends DriverPage
 {
+    public WebElement getNotesCount()
+    {
+        return webDriver.findElement(By.className("qa-notesCount"));
+    }
+
     public WebElement getDoneButton()
     {
         WebElement doneButton = webDriver.findElement(By.id("gwt-debug-NoteAttributes-doneButton"));
@@ -29,41 +36,33 @@ public class NotePage extends ButtonPage
         return webDriver.findElement(By.id("gwt-debug-NoteTitleView-textBox"));
     }
 
-//    public WebElement getNoteBody()
-//    {
-//        return webDriver.findElement(By.id("gwt-debug-NoteContentEditorView-root"));
-//    }
-
     public WebElement getNoteMessage()
     {
-        return webDriver.findElement(By.id("entinymce_170_ifr"));
-    }
-
-    public List<WebElement> getWebElementList(String waitForClassName, String retrieveElementsByClasses)
-    {
-        waitForElement(webDriver.findElement(By.className(waitForClassName)));
-        return webDriver.findElements(By.className(retrieveElementsByClasses));
-    }
-
-    public List<WebElement> getDeleteButtons()
-    {
-        waitForElement(webDriver.findElement(By.id("gwt-debug-Sidebar-newNoteButton-container")));
-        return webDriver.findElements(By.className("qa-deleteButton"));
+        WebElement webElement = webDriver.findElement(By.id("entinymce_170_ifr"));
+        waitForElement(webElement);
+        return webElement;
     }
 
     public boolean isTitleInList(String noteTitle, String listName)
     {
         boolean containsUntitled = true;
         List<WebElement> webElementList = null;
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         while (containsUntitled)
         {
             if ("notes".equals(listName))
             {
-                webElementList = getWebElementList("NotesView-ScrollWindow", "qa-title");
+                waitForElement(webDriver.findElement(By.className("NotesView-ScrollWindow")));
+                webElementList = getWebElementList("qa-title");
             }
             else
             {
-                webElementList = getWebElementList("dragdrop-dropTarget", "qa-name");
+                waitForElement(webDriver.findElement(By.className("dragdrop-dropTarget")));
+                webElementList = getWebElementList("qa-name");
             }
             for (WebElement webElement : webElementList)
             {
@@ -88,11 +87,6 @@ public class NotePage extends ButtonPage
             }
         }
         return false;
-    }
-
-    public WebElement getNoteBookTitle()
-    {
-        return webDriver.findElement(By.id("gwt-debug-CreateNotebookDialog-centeredTextBox-textBox"));
     }
 
     public void createTable(int column, int row)
@@ -146,15 +140,6 @@ public class NotePage extends ButtonPage
     private List<WebElement> getTableRows()
     {
         WebElement webElement = webDriver.findElement(By.id("EN_IframePanel_0"));
-//        try
-//        {
-//            webElement = getNoteMessage();
-//        }
-//        catch (NoSuchElementException | ElementNotVisibleException e)
-//        {
-//            webElement = webDriver.findElement(By.id("EN_IframePanel_0"));
-//        }
-//        ;
         return webDriver.switchTo().frame(webElement).findElements(By.tagName("tr"));
     }
 
@@ -200,102 +185,59 @@ public class NotePage extends ButtonPage
 
     public boolean assertSortMethod(String parameter, String order) throws InterruptedException
     {
-//        List<String> textList = new ArrayList<>();
         List<WebElement> webElements;
-//        List<String> tmp;
 
         getNoteMessage().click();
 
-//        switch (parameter)
-//        {
-//            case "Title":
-//                webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-title"));
-//
-//                for (WebElement webElement : webElements)
-//                {
-//                    textList.add(webElement.getText());
-//                }
-//
-//                tmp = textList;
-//
-//                if ("ascending".equals(order))
-//                {
-//                    Collections.sort(tmp);
-//                    System.out.println("Sort 1 to 3");
-//                }
-//                else
-//                {
-//                    Collections.sort(tmp, Collections.reverseOrder());
-//                    System.out.println("Sort 3 to 1");
-//                }
-//                System.out.println("logging titles...");
-//                for (String title : textList)
-//                {
-//                    System.out.println(title);
-//                }
-//
-//                System.out.println("logging tmp...");
-//                for (String tm : tmp)
-//                {
-//                    System.out.println(tm);
-//                }
-//
-//                return tmp.equals(textList);
-//            case "Date Created":
-                if ("Date Created".equals(parameter))
-                {
-                    webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-date"));
-                }
-                else
-                {
-                    webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-title"));
-                }
-
-                Map<Integer, String> sorted = fetchCorrectSortList(webElements, true);
-                int value;
-                int previousValue = -1;
-                String text;
-                for (int i = 0; i < sorted.size(); i++)
-                {
-                    text = sorted.get(i);
-                    value = Integer.parseInt(text.substring(0, 2).trim());
-
-                    System.out.println("Value: " + value);
-                    System.out.println("Previous Value: " + previousValue);
-
-                    if (previousValue != -1)
-                    {
-                        switch (order)
-                        {
-                            case "newest first":
-                            case "ascending":
-                                if (previousValue > value)
-                                {
-                                    System.out.println("List not in " + order + " order!");
-                                    return false;
-                                }
-                                break;
-                            case "oldest first":
-                            case "descending":
-                                if (previousValue < value)
-                                {
-                                    System.out.println("List not in " + order + " order!");
-                                    return false;
-                                }
-                                break;
-                            default: throw new IllegalArgumentException("Unsupported sorting option:" + order);
-                        }
-                    }
-                    previousValue = value;
-                }
-
-                return true;
+        if ("Date Created".equals(parameter))
+        {
+            webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-date"));
+        }
+        else
+        {
+            webElements = webDriver.findElement(By.id("gwt-debug-notesListView")).findElements(By.className("qa-title"));
         }
 
-//        Date Created (oldest first)
-//        ii. Date Created (newest first)
-//        iii. Title (ascending)
-//        iv. Title (descending)
+        Map<Integer, String> sorted = fetchCorrectSortList(webElements, true);
+        int value;
+        int previousValue = -1;
+        String text;
+        for (int i = 0; i < sorted.size(); i++)
+        {
+            text = sorted.get(i);
+            value = Integer.parseInt(text.substring(0, 2).trim());
+
+            System.out.println("Value: " + value);
+            System.out.println("Previous Value: " + previousValue);
+
+            if (previousValue != -1)
+            {
+                switch (order)
+                {
+                    case "newest first":
+                    case "ascending":
+                        if (previousValue > value)
+                        {
+                            System.out.println("List not in " + order + " order!");
+                            return false;
+                        }
+                        break;
+                    case "oldest first":
+                    case "descending":
+                        if (previousValue < value)
+                        {
+                            System.out.println("List not in " + order + " order!");
+                            return false;
+                        }
+                        break;
+                    default: throw new IllegalArgumentException("Unsupported sorting option:" + order);
+                }
+            }
+            previousValue = value;
+        }
+
+        return true;
+    }
 
     public Map<Integer, String> fetchCorrectSortList(List<WebElement> webElements, boolean isAscending)
     {
@@ -309,6 +251,27 @@ public class NotePage extends ButtonPage
         }
 
         return isAscending ? new TreeMap<>(hashMap) : new TreeMap<>(hashMap).descendingMap();
+    }
+
+    public void deleteAllNotes()
+    {
+        List<WebElement> deleteElements;
+        do
+        {
+            deleteElements = getDeleteButtons();
+            if (deleteElements.stream().findFirst().isPresent())
+            {
+                hoverOn(deleteElements.stream().findFirst().get());
+                deleteElements.stream().findFirst().get().click();
+                waitForElement(getConfirmationButton());
+                getConfirmationButton().click();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } while (deleteElements.size() > 1);
     }
 
 
@@ -333,11 +296,4 @@ public class NotePage extends ButtonPage
             return columnCount;
         }
     }
-
-    public void hoverOn(WebElement webElement)
-    {
-        Actions action = new Actions(webDriver);
-        action.moveToElement(webElement).build().perform();
-    }
-
 }

@@ -2,12 +2,11 @@ package mt.edu.um.pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
 /**
- * Created by waylon on 23/12/2015.
+ * @author waylon on 23/12/2015.
  */
 public class NotebookPage extends NotePage
 {
@@ -28,7 +27,8 @@ public class NotebookPage extends NotePage
 
     public void deleteNotebook(String notebook)
     {
-        List<WebElement> webElementList = getWebElementList("qa-notebookWidget", "qa-name");
+        waitForElement(webDriver.findElement(By.className("qa-notebookWidget")));
+        List<WebElement> webElementList = getWebElementList("qa-name");
 
         for (WebElement webElement : webElementList)
         {

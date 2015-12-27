@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 /**
- * Created by waylon on 08/12/2015.
+ * @author waylon on 08/12/2015.
  */
 public class ButtonPage extends DriverPage
 {
@@ -20,17 +20,15 @@ public class ButtonPage extends DriverPage
 
     public WebElement getCreateNoteBookButton()
     {
-        return webDriver.findElement(By.id("gwt-debug-NotebooksDrawer-createNotebookButton"));
+        waitForElement(webDriver.findElement(By.id("gwt-debug-NotebooksDrawer-title")));
+        WebElement webElement = webDriver.findElement(By.id("gwt-debug-NotebooksDrawer-createNotebookButton"));
+        waitForElement(webElement);
+        return webElement;
     }
 
     public WebElement getConfirmCreateNoteBookButton()
     {
         return webDriver.findElement(By.id("gwt-debug-CreateNotebookDialog-confirm"));
-    }
-
-    public WebElement getConfirmationButton()
-    {
-        return webDriver.findElement(By.id("gwt-debug-ConfirmationDialog-confirm"));
     }
 
     public WebElement getAddToShortcutButton()
@@ -45,7 +43,16 @@ public class ButtonPage extends DriverPage
 
     public WebElement getTableButton()
     {
-        return webDriver.findElement(By.id("gwt-debug-FormattingBar-tableButton"));
+        WebElement webElement = webDriver.findElement(By.id("gwt-debug-FormattingBar-tableButton"));
+        waitForElement(webElement);
+        return webElement;
+    }
+
+    public WebElement getOverflowButton()
+    {
+        WebElement webElement = webDriver.findElement(By.id("gwt-debug-FormattingBar-overflowButton"));
+        waitForElement(webElement);
+        return webElement;
     }
 
     public WebElement getOptionsButton()
@@ -55,21 +62,26 @@ public class ButtonPage extends DriverPage
 
     public WebElement getSearchButton()
     {
-        return webDriver.findElement(By.id("gwt-debug-Sidebar-searchButton-container"));
+        WebElement webElement = webDriver.findElement(By.id("gwt-debug-Sidebar-searchButton-container"));
+        waitForElement(webElement);
+        return webElement;
     }
 
-    public WebElement getTrashButton()
-    {
+    public WebElement getTrashButton() throws InterruptedException {
+        Thread.sleep(2000);
         return webDriver.findElement(By.className("qa-trash"));
     }
 
     public WebElement getTrashHeader()
     {
-        return webDriver.findElement(By.id("gwt-debug-trashHeaderContainer"));
+        WebElement webElement = webDriver.findElement(By.id("gwt-debug-trashHeaderContainer"));
+        waitForElement(webElement);
+        return webElement;
     }
 
-    public WebElement getEmptyTrashButton()
+    public WebElement getEmptyTrashButton() throws InterruptedException
     {
+        Thread.sleep(2000);
         return getTrashHeader().findElement(By.tagName("button"));
     }
 
@@ -86,5 +98,10 @@ public class ButtonPage extends DriverPage
     public WebElement getNotesTitle()
     {
         return webDriver.findElement(By.id("gwt-debug-NotesHeader-title"));
+    }
+
+    public WebElement getTagButton()
+    {
+        return webDriver.findElement(By.id("gwt-debug-Sidebar-tagsButton-container"));
     }
 }

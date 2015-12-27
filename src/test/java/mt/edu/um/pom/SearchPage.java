@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 /**
- * Created by waylon on 23/12/2015.
+ * @author waylon on 23/12/2015.
  */
 public class SearchPage extends DriverPage
 {

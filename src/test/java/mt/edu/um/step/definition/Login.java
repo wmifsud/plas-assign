@@ -5,12 +5,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import mt.edu.um.pom.ButtonPage;
 import mt.edu.um.pom.LoginPage;
+import org.openqa.selenium.ElementNotVisibleException;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 /**
- * Created by waylon on 06/12/2015.
+ * @author waylon on 06/12/2015.
  */
 public class Login extends ButtonPage
 {
@@ -25,7 +26,14 @@ public class Login extends ButtonPage
                 loginPage.getSignInButton().click();
                 break;
             case "sign in header button":
-                loginPage.getHeaderSignInLink().click();
+                try
+                {
+                    loginPage.getHeaderSignInLink().click();
+                }
+                catch (ElementNotVisibleException e)
+                {
+                    loginPage.getSignInButton().click();
+                }
                 break;
             default:
                 loginPage.getHeaderMenu().click();
@@ -36,10 +44,11 @@ public class Login extends ButtonPage
     @And("^I enter ([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+) as emailaddress$")
     public void inputEmailAddress(String email)
     {
+        waitForElement(loginPage.getUserNameTextBox());
         loginPage.getUserNameTextBox().sendKeys(email);
     }
 
-    @And("^I enter (.*) as password")
+    @And("^I enter (.*) as password$")
     public void inputPassword(String password)
     {
         loginPage.getPasswordTextBox().sendKeys(password);
@@ -57,7 +66,7 @@ public class Login extends ButtonPage
         assertEquals(loginPage.getPasswordError().getText(), errorMessage);
     }
 
-    @And("I login with (sign in|header) link")
+    @And("^I login with (sign in|header) link$")
     public void login(String method)
     {
         if ("sign in".equals(method))
@@ -74,7 +83,7 @@ public class Login extends ButtonPage
         getSignUpButton().click();
     }
 
-    @And("I logout")
+    @And("^I logout$")
     public void logout()
     {
         loginPage.getAccountMenuLink().click();

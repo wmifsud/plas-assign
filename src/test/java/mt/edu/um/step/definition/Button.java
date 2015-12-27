@@ -5,15 +5,14 @@ import mt.edu.um.pom.ButtonPage;
 import mt.edu.um.pom.DriverPage;
 
 /**
- * Created by waylon on 08/12/2015.
+ * @author waylon on 08/12/2015.
  */
 public class Button extends DriverPage
 {
     ButtonPage buttonPage = new ButtonPage();
 
-    @And("^I click the (.*) button")
-    public void buttonClick(String buttonName)
-    {
+    @And("^I click the (.*) button$")
+    public void buttonClick(String buttonName) throws InterruptedException {
         switch (buttonName)
         {
             case "notes":
@@ -24,6 +23,7 @@ public class Button extends DriverPage
                 buttonPage.getSignUpButton().click();
                 break;
             case "table":
+                buttonPage.getOverflowButton().click();
                 buttonPage.getTableButton().click();
                 break;
             case "notebook":
@@ -48,7 +48,6 @@ public class Button extends DriverPage
                 buttonPage.getSearchButton().click();
                 break;
             case "trash":
-                waitForElement(buttonPage.getTrashButton());
                 buttonPage.getTrashButton().click();
                 break;
             case "empty trash":
@@ -58,6 +57,9 @@ public class Button extends DriverPage
                     buttonPage.getConfirmationButton().click();
                 }
                 waitForTextInElement(buttonPage.getNotesCount(), "0 notes");
+                break;
+            case "tag":
+                buttonPage.getTagButton().click();
                 break;
             default:
                 throw new IllegalArgumentException("Button not supported: " + buttonName);

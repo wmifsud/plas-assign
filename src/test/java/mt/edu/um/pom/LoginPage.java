@@ -1,13 +1,13 @@
 package mt.edu.um.pom;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
 /**
- * Created by waylon on 06/12/2015.
+ * @author waylon on 06/12/2015.
  */
 public class LoginPage extends DriverPage
 {
@@ -18,12 +18,14 @@ public class LoginPage extends DriverPage
 
     public WebElement getSignInLink()
     {
+        waitForElement(webDriver.findElement(By.className("js-sign-in-menu")));
         return webDriver.findElement(By.className("js-sign-in-menu"));
     }
 
     public WebElement getHeaderSignInLink()
     {
         WebElement signInLink = null;
+        waitForElement(webDriver.findElement(By.className("global-header")));
         List<WebElement> webElementList = webDriver.findElement(By.className("global-header")).findElements(By.tagName("a"));
 
         for (WebElement webElement : webElementList)
@@ -43,6 +45,25 @@ public class LoginPage extends DriverPage
         return webDriver.findElement(By.id("header-menu"));
     }
 
+    public WebElement chrome()
+    {
+        return webDriver.findElement(By.className("js-global-menu-container"));
+    }
+
+    public WebElement chrome2()
+    {
+        List<WebElement> webElementList = webDriver.findElement(By.className("js-global-menu")).findElements(By.tagName("a"));
+
+        for (WebElement webElement : webElementList)
+        {
+            if (webElement.getAttribute("data-action").equals("sign-in"))
+            {
+                return webElement;
+            }
+        }
+        throw new ElementNotVisibleException("Element not visible: a");
+    }
+
     public WebElement getUserNameTextBox()
     {
         return webDriver.findElement(By.id("username"));
@@ -55,6 +76,7 @@ public class LoginPage extends DriverPage
 
     public WebElement getAccountMenuLink()
     {
+        waitForElement(webDriver.findElement(By.id("gwt-debug-AccountMenu-avatar")));
         return webDriver.findElement(By.id("gwt-debug-AccountMenu-avatar"));
     }
 
