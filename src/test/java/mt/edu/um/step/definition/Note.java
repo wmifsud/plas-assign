@@ -69,14 +69,14 @@ public class Note
     }
 
     @And("^I select the (.*) sort order$")
-    public void selectSortMethodOption(String sortMethod) throws InterruptedException
+    public void selectSortMethodOption(String sortMethod)
     {
         notePage.getSortOption(sortMethod).click();
-        Thread.sleep(2000);
+        notePage.delay();
     }
 
     @Then("^the sort order should be (Date Created|Title) in (.*) sort order$")
-    public void assertSortingIsCorrect(String parameter, String order) throws InterruptedException
+    public void assertSortingIsCorrect(String parameter, String order)
     {
         assertTrue(notePage.assertSortMethod(parameter, order));
     }

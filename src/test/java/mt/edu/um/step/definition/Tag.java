@@ -13,7 +13,7 @@ public class Tag extends NotePage
     TagPage tagPage = new TagPage();
 
     @And("^I assign (.*) to (.*)$")
-    public void assignTagToNote(String tagName, String noteTitle) throws InterruptedException
+    public void assignTagToNote(String tagName, String noteTitle)
     {
         tagPage.assignTagToNote(tagName, noteTitle);
     }

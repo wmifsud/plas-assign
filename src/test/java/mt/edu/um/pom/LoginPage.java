@@ -80,7 +80,7 @@ public class LoginPage extends DriverPage
         return webDriver.findElement(By.id("gwt-debug-AccountMenu-avatar"));
     }
 
-    public WebElement getLogoutLink()
+    private WebElement getLogoutLink()
     {
         return webDriver.findElement(By.id("gwt-debug-AccountMenu-logout"));
     }
@@ -88,5 +88,12 @@ public class LoginPage extends DriverPage
     public WebElement getPasswordError()
     {
         return webDriver.findElement(By.id("password-wrapper")).findElement(By.className("error-status"));
+    }
+
+    public void logout()
+    {
+        waitForElement(getAccountMenuLink());
+        getAccountMenuLink().click();
+        getLogoutLink().click();
     }
 }

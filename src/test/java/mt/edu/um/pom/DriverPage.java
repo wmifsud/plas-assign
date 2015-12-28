@@ -37,10 +37,19 @@ public class DriverPage
         return webDriver.findElements(By.className(retrieveElementsByClasses));
     }
 
-    public List<WebElement> getDeleteButtons()
+    public List<WebElement> getDeleteButtons(String listName)
     {
         waitForElement(webDriver.findElement(By.id("gwt-debug-Sidebar-newNoteButton-container")));
-        return webDriver.findElement(By.className("NotesView-ScrollWindow")).findElements(By.className("qa-deleteButton"));
+        WebElement webElement;
+        if (listName.equals("notes"))
+        {
+            webElement = webDriver.findElement(By.className("NotesView-ScrollWindow"));
+        }
+        else
+        {
+            webElement = webDriver.findElement(By.id("gwt-debug-notebooksDrawerSlidingPanel"));
+        }
+        return webElement.findElements(By.className("qa-deleteButton"));
     }
 
     public void hoverOn(WebElement webElement)
@@ -52,5 +61,17 @@ public class DriverPage
     public WebElement getConfirmationButton()
     {
         return webDriver.findElement(By.id("gwt-debug-ConfirmationDialog-confirm"));
+    }
+
+    public void delay()
+    {
+        try
+        {
+            Thread.sleep(2000);
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

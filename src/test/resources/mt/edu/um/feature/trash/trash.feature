@@ -7,8 +7,7 @@ Feature: Trash
 
   @5a
   Scenario: Trash functionality
-    Given I create 1 note with title as test title b and body as test body b
-    And I click the notebook button
+    Given I click the notebook button
     And I click the trash button
     And I click the empty trash button
     And I click the notes button

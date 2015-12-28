@@ -12,7 +12,8 @@ public class Button extends DriverPage
     ButtonPage buttonPage = new ButtonPage();
 
     @And("^I click the (.*) button$")
-    public void buttonClick(String buttonName) throws InterruptedException {
+    public void buttonClick(String buttonName)
+    {
         switch (buttonName)
         {
             case "notes":
@@ -51,12 +52,14 @@ public class Button extends DriverPage
                 buttonPage.getTrashButton().click();
                 break;
             case "empty trash":
+                delay();
                 if (!buttonPage.getNotesCount().getText().startsWith("0"))
                 {
                     buttonPage.getEmptyTrashButton().click();
                     buttonPage.getConfirmationButton().click();
+                    waitForTextInElement(buttonPage.getNotesCount(), "0 notes");
+                    delay();
                 }
-                waitForTextInElement(buttonPage.getNotesCount(), "0 notes");
                 break;
             case "tag":
                 buttonPage.getTagButton().click();

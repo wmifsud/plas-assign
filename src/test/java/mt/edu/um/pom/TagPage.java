@@ -17,7 +17,7 @@ public class TagPage extends NotePage
         return webDriver.findElement(By.id("gwt-debug-NoteTagsView-tagInputBox"));
     }
 
-    public void assignTagToNote(String tagName, String noteTitle) throws InterruptedException
+    public void assignTagToNote(String tagName, String noteTitle)
     {
         waitForElement(webDriver.findElement(By.className("NotesView-ScrollWindow")));
         List<WebElement> noteList = getWebElementList("focus-NotesView-Note");
@@ -28,7 +28,7 @@ public class TagPage extends NotePage
             if (note.findElement(By.className("qa-title")).getText().equals(noteTitle))
             {
                 note.click();
-                Thread.sleep(2000);
+                delay();
                 getCreateTag().click();
                 waitForElementVisibility(getCreateTag().findElement(By.id("gwt-debug-NoteTagsView-tagInputBox-lozengeInput-lozengeTextBox")));
                 new Actions(webDriver).sendKeys(tagName).perform();
@@ -40,6 +40,7 @@ public class TagPage extends NotePage
     public WebElement selectTag(String tagName)
     {
         waitForElement(webDriver.findElement(By.className("focus-drawer-TagsDrawer-TagsList-tags-container")));
+        delay();
         List<WebElement> tagList = getWebElementList("focus-drawer-TagsDrawer-TagSelectable-name");
 
         for (WebElement tag : tagList)

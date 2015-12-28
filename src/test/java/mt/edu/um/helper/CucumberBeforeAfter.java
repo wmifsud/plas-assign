@@ -65,7 +65,7 @@ public class CucumberBeforeAfter
     }
 
     @After(value = "@note,@search,@5b,@tag")
-    public void removeNotes() throws InterruptedException
+    public void removeNotes()
     {
         System.out.println("Removing created notes");
         Driver.getWebDriver().get("https://evernote.com");
@@ -74,9 +74,7 @@ public class CucumberBeforeAfter
 
         notePage.deleteAllNotes();
 
-        notePage.waitForElement(loginPage.getAccountMenuLink());
-        loginPage.getAccountMenuLink().click();
-        loginPage.getLogoutLink().click();
+        loginPage.logout();
         System.out.println("Removal of notes complete");
     }
 }

@@ -67,8 +67,9 @@ public class ButtonPage extends DriverPage
         return webElement;
     }
 
-    public WebElement getTrashButton() throws InterruptedException {
-        Thread.sleep(2000);
+    public WebElement getTrashButton()
+    {
+        delay();
         return webDriver.findElement(By.className("qa-trash"));
     }
 
@@ -79,9 +80,9 @@ public class ButtonPage extends DriverPage
         return webElement;
     }
 
-    public WebElement getEmptyTrashButton() throws InterruptedException
+    public WebElement getEmptyTrashButton()
     {
-        Thread.sleep(2000);
+        delay();
         return getTrashHeader().findElement(By.tagName("button"));
     }
 

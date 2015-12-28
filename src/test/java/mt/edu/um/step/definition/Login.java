@@ -37,6 +37,7 @@ public class Login extends ButtonPage
                 break;
             default:
                 loginPage.getHeaderMenu().click();
+                loginPage.delay();
                 loginPage.getSignInLink().click();
         }
     }
@@ -86,7 +87,6 @@ public class Login extends ButtonPage
     @And("^I logout$")
     public void logout()
     {
-        loginPage.getAccountMenuLink().click();
-        loginPage.getLogoutLink().click();
+        loginPage.logout();
     }
 }

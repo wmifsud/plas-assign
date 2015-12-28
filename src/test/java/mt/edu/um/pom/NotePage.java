@@ -23,6 +23,7 @@ public class NotePage extends DriverPage
     {
         WebElement doneButton = webDriver.findElement(By.id("gwt-debug-NoteAttributes-doneButton"));
         waitForTextInElement(doneButton, "Done");
+        delay();
         return doneButton;
     }
 
@@ -47,11 +48,9 @@ public class NotePage extends DriverPage
     {
         boolean containsUntitled = true;
         List<WebElement> webElementList = null;
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        delay();
+
         while (containsUntitled)
         {
             if ("notes".equals(listName))
@@ -183,7 +182,7 @@ public class NotePage extends DriverPage
         throw new ElementNotFoundException(sortMethod, "class", "SelectorOption");
     }
 
-    public boolean assertSortMethod(String parameter, String order) throws InterruptedException
+    public boolean assertSortMethod(String parameter, String order)
     {
         List<WebElement> webElements;
 
@@ -258,18 +257,14 @@ public class NotePage extends DriverPage
         List<WebElement> deleteElements;
         do
         {
-            deleteElements = getDeleteButtons();
+            deleteElements = getDeleteButtons("notes");
             if (deleteElements.stream().findFirst().isPresent())
             {
                 hoverOn(deleteElements.stream().findFirst().get());
                 deleteElements.stream().findFirst().get().click();
                 waitForElement(getConfirmationButton());
                 getConfirmationButton().click();
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                delay();
             }
         } while (deleteElements.size() > 1);
     }

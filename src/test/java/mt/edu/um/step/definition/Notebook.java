@@ -33,11 +33,11 @@ public class Notebook extends ButtonPage
     }
 
     @And(("^delete (.*) notebook$"))
-    public void deleteNotebook(String notebook) throws InterruptedException
+    public void deleteNotebook(String notebook)
     {
         notebookPage.waitForElement(getNoteBookButton());
         getNoteBookButton().click();
-        Thread.sleep(2000);
+        delay();
         notebookPage.deleteNotebook(notebook);
     }
 }
