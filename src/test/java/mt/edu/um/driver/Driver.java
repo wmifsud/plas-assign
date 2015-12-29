@@ -62,7 +62,6 @@ public class Driver
                     firefoxProfileGrid.setEnableNativeEvents(false);
                     DesiredCapabilities firefoxCapability = DesiredCapabilities.firefox();
                     firefoxCapability.setBrowserName("firefox");
-                    firefoxCapability.setVersion("42.0");
                     firefoxCapability.setPlatform(Platform.MAC);
                     firefoxCapability.setCapability(FirefoxDriver.PROFILE, firefoxProfileGrid);
                     driver = new RemoteWebDriver(new URL(SELENIUM_GRID_HUB_URL), firefoxCapability);
