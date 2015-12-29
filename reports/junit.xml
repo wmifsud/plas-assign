@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="45.877595">
+<testcase classname="Notebook" name="Create New Notebook" time="45.877595">
+<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
+And I login with sign in link...............................................passed
+Given I click the notebook button...........................................passed
+And I click the create new notebook button..................................passed
+And I set the notebook title as test notebook...............................passed
+And I create 1 note with title as test title a and body as test body a......passed
+Then test title a note is under the test notebook notebook..................passed
+And delete test notebook notebook...........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

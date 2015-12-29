@@ -1,0 +1,225 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15781933514,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I navigate to https://evernote.com",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://evernote.com",
+                  "offset": 14
+                }
+              ],
+              "location": "Navigation.iNavigateTo(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10972950121,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login with sign in link",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 13
+                }
+              ],
+              "location": "Login.login(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3252416114,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberBeforeAfter.setup()"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "Create New Notebook",
+        "description": "",
+        "id": "notebook;create-new-notebook",
+        "after": [
+          {
+            "result": {
+              "duration": 595448936,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberBeforeAfter.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2386103156,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I click the notebook button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "notebook",
+                  "offset": 12
+                }
+              ],
+              "location": "Button.buttonClick(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 846346906,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I click the create new notebook button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "create new notebook",
+                  "offset": 12
+                }
+              ],
+              "location": "Button.buttonClick(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1222371636,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I set the notebook title as test notebook",
+            "match": {
+              "arguments": [
+                {
+                  "val": "test notebook",
+                  "offset": 28
+                }
+              ],
+              "location": "Notebook.inputSearchBox(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5288582789,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I create 1 note with title as test title a and body as test body a",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 9
+                },
+                {
+                  "val": "test title a",
+                  "offset": 30
+                },
+                {
+                  "val": "test body a",
+                  "offset": 55
+                }
+              ],
+              "location": "Note.createNewNote(int,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2589573561,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "test title a note is under the test notebook notebook",
+            "match": {
+              "arguments": [
+                {
+                  "val": "test title a",
+                  "offset": 0
+                },
+                {
+                  "val": "test notebook",
+                  "offset": 31
+                }
+              ],
+              "location": "Notebook.assertNoteLinkedToNotebook(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2941868398,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "delete test notebook notebook",
+            "match": {
+              "arguments": [
+                {
+                  "val": "test notebook",
+                  "offset": 7
+                }
+              ],
+              "location": "Notebook.deleteNotebook(String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 8,
+            "name": "@4"
+          }
+        ]
+      }
+    ],
+    "name": "Notebook",
+    "description": "",
+    "id": "notebook",
+    "keyword": "Feature",
+    "uri": "notebook/notebook.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@all"
+      },
+      {
+        "line": 2,
+        "name": "@notebook"
+      }
+    ]
+  }
+]

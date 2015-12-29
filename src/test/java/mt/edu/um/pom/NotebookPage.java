@@ -40,6 +40,8 @@ public class NotebookPage extends NotePage
             }
         }
 
+        delay();
+
         for(WebElement webElement : getDeleteButtons("notebooks"))
         {
             System.out.println(webElement.getText());
