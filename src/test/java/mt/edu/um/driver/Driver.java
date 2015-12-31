@@ -19,7 +19,10 @@ public class Driver
     private static final String CHROME_DRIVER_MAC_PATH = "browserdriver/chrome/chromedriver";
     private static final String CHROME_DRIVER_WINDOWS_PATH = "browserdriver/chrome/chromedriver.exe";
 
-    private Driver() {}
+    private Driver()
+    {
+
+    }
 
     public static WebDriver getWebDriver()
     {
@@ -84,11 +87,6 @@ public class Driver
             throw new RuntimeException("Failed to initialize Selenium WebDriver!", e);
         }
     }
-
-//    public static String getBrowser()
-//    {
-//        return browser;
-//    }
 
     public static void setBrowser(String browser)
     {
