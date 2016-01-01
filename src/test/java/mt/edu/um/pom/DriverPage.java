@@ -19,17 +19,17 @@ public class DriverPage
 
     public void waitForTextInElement(WebElement webElement, String text)
     {
-        new WebDriverWait(Driver.getWebDriver(), 30).until(ExpectedConditions.textToBePresentInElement(webElement, text));
+        new WebDriverWait(webDriver, 30).until(ExpectedConditions.textToBePresentInElement(webElement, text));
     }
 
     public void waitForElement(WebElement webElement)
     {
-        new WebDriverWait(Driver.getWebDriver(), 30).until(ExpectedConditions.elementToBeClickable(webElement));
+        new WebDriverWait(webDriver, 30).until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
     public void waitForElementVisibility(WebElement webElement)
     {
-        new WebDriverWait(Driver.getWebDriver(), 30).until(ExpectedConditions.visibilityOf(webElement));
+        new WebDriverWait(webDriver, 30).until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public List<WebElement> getWebElementList(String retrieveElementsByClasses)

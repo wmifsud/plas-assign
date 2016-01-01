@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="43.766929">
-<testcase classname="Contact" name="Create new contact" time="43.766929">
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="41.052934">
+<testcase classname="Contact" name="Create new contact" time="41.052934">
 <system-out><![CDATA[Given I select the create new contact icon..................................passed
 And I enter testing123 as Name..............................................passed
 And I enter w@w.com as Email................................................passed
 And I enter 35679797979 as Phone............................................passed
 And I enter 35621212121 as Phone............................................passed
-And I select the Navigate Up image..........................................passed
-Then the testing123 contact is created......................................passed
+And I select the navigate up icon...........................................passed
+Then testing123 is under contact name.......................................passed
+Then 35679797979 is under Mobile............................................passed
+Then 35621212121 is under Home..............................................passed
+Then w@w.com is under Home..................................................passed
+Then testing123 is under All contacts.......................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

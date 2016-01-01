@@ -3,8 +3,9 @@ package mt.edu.um.helper;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import mt.edu.um.driver.MobileDriver;
 import mt.edu.um.driver.Driver;
+import mt.edu.um.driver.MobileDriver;
+import mt.edu.um.pom.ContactPage;
 import mt.edu.um.pom.LoginPage;
 import mt.edu.um.pom.NotePage;
 import org.openqa.selenium.By;
@@ -20,6 +21,7 @@ public class CucumberBeforeAfter
 
     LoginPage loginPage = null;
     NotePage notePage = null;
+    ContactPage contactPage = null;
 
     // This ensures that this @Before is always executed first
     @Before(order = 0, value = "~@android")
@@ -99,10 +101,11 @@ public class CucumberBeforeAfter
         }
 
         MobileDriver.startAndroidDriver();
+        contactPage = new ContactPage();
     }
 
     // This ensures that this @After is always executed last
-    @After(order = 0, value = "@android")
+    @After(order = 1, value = "@android")
     public void androidTearDown(Scenario scenario)
     {
         // If Cucumber scenario fails, output time of failure and take screen shot
@@ -119,4 +122,15 @@ public class CucumberBeforeAfter
             MobileDriver.nullAndroidDriver();
         }
     }
+
+//    @After(order = 0, value = "@android")
+//    public void removeContacts(Scenario scenario)
+//    {
+//        androidSetup();
+//        System.out.println("Removing created contacts");
+//        contactPage.deleteContacts();
+//
+//        System.out.println("Removal of contacts complete");
+//        androidTearDown(scenario);
+//    }
 }
