@@ -10,25 +10,38 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by waylon on 30/12/2015.
+ * @author waylon on 30/12/2015.
  */
 public class Contact
 {
     ContactPage contactPage = new ContactPage();
 
-    @Given("^I select the (.*) icon$")
-    public void selectContactIcon(String attributeName)
+    @Given("^I select (.*) (icon|contact)$")
+    public void selectContactIcon(String attributeName, String type)
     {
-        switch (attributeName)
+        if ("contact".equals(type))
         {
-            case "create new contact":
-                contactPage.getCreateContactIcon().click();
-                break;
-            case "navigate up":
-                contactPage.getNavigateUpIcon().click();
-                break;
-            default:
-                throw new IllegalArgumentException("Icon not supported: " + attributeName);
+            contactPage.getContact(attributeName).click();
+        }
+        else
+        {
+            switch (attributeName)
+            {
+                case "create new contact":
+                    contactPage.getCreateContactIcon().click();
+                    break;
+                case "navigate up":
+                    contactPage.getNavigateUpIcon().click();
+                    break;
+                case "edit":
+                    contactPage.getEditIcon().click();
+                    break;
+                case "favorites":
+                    contactPage.getFavoritesIcon().click();
+                    break;
+                default:
+                    throw new IllegalArgumentException("Icon not supported: " + attributeName);
+            }
         }
     }
 
@@ -53,10 +66,38 @@ public class Contact
                 assertTrue(contactPage.assertTextIsUnderAttribute(text, attribute));
                 break;
             case "All contacts":
-                contactPage.test();
+            case "Favorites":
+                // required to go to home page to check if contact is under contacts list.
+                contactPage.resetMobileApplication();
+                contactPage = new ContactPage();
+
+                contactPage.getElementByAttributeText("Contacts").click();
+                assertTrue(contactPage.getElementByAttributeText(attribute).isSelected());
+                if ("All contacts".equals(attribute))
+                {
+                    assertTrue(contactPage.assertContactIsInContactsList(text));
+                }
+                else
+                {
+                    assertEquals(contactPage.getElementUnderFavorites().getText(), text);
+                }
                 break;
             default:
                 throw new IllegalArgumentException("Text: " + text + ", Attribute: " + attribute + " not supported");
         }
+    }
+
+    @And("^I change (.*) to (.*)$")
+    public void updateContactText(String from, String to)
+    {
+        contactPage.fetchElementToUpdate(from).sendKeys(to);
+    }
+
+    @Given("^I check that there are (.*)$")
+    public void noFavorites(String message)
+    {
+        contactPage.getElementByAttributeText("Contacts").click();
+        contactPage.getElementByAttributeText("Favorites").click();
+        assertEquals(contactPage.getContactMessage().getText(), message);
     }
 }

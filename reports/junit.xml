@@ -1,16 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="41.052934">
-<testcase classname="Contact" name="Create new contact" time="41.052934">
-<system-out><![CDATA[Given I select the create new contact icon..................................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="227.401975">
+<testcase classname="Contact" name="Create new contact" time="65.700266">
+<system-out><![CDATA[Given I select create new contact icon......................................passed
 And I enter testing123 as Name..............................................passed
 And I enter w@w.com as Email................................................passed
 And I enter 35679797979 as Phone............................................passed
 And I enter 35621212121 as Phone............................................passed
-And I select the navigate up icon...........................................passed
+And I select navigate up icon...............................................passed
 Then testing123 is under contact name.......................................passed
 Then 35679797979 is under Mobile............................................passed
 Then 35621212121 is under Home..............................................passed
 Then w@w.com is under Home..................................................passed
 Then testing123 is under All contacts.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Contact" name="Search for contact" time="94.267846">
+<system-out><![CDATA[Given I select create new contact icon......................................passed
+And I enter testing123 as Name..............................................passed
+And I enter w@w.com as Email................................................passed
+And I enter 35679797979 as Phone............................................passed
+And I enter 35621212121 as Phone............................................passed
+And I select navigate up icon...............................................passed
+Then testing123 is under All contacts.......................................passed
+And I select testing123 contact.............................................passed
+And I select edit icon......................................................passed
+And I change 35679797979 to 35699999999.....................................passed
+And I change testing123 to test456ing.......................................passed
+And I select navigate up icon...............................................passed
+Then test456ing is under contact name.......................................passed
+Then 35699999999 is under Mobile............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Contact" name="Favorites functionality" time="67.433863">
+<system-out><![CDATA[Given I check that there are No favorites...................................passed
+And I select create new contact icon........................................passed
+And I enter testing123 as Name..............................................passed
+And I enter w@w.com as Email................................................passed
+And I enter 35679797979 as Phone............................................passed
+And I enter 35621212121 as Phone............................................passed
+And I select navigate up icon...............................................passed
+And I select favorites icon.................................................passed
+Then testing123 is under Favorites..........................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

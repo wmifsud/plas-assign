@@ -23,9 +23,7 @@ public class CucumberBeforeAfter
     NotePage notePage = null;
     ContactPage contactPage = null;
 
-    // This ensures that this @Before is always executed first
-    @Before(order = 0, value = "~@android")
-    public void setup()
+    private void clearImages()
     {
         // Delete all screen shots from previous execution
         // THIS SHOULD BE EXECUTED ONLY ONCE
@@ -41,6 +39,13 @@ public class CucumberBeforeAfter
             }
             imagesCleaned = true;
         }
+    }
+
+    // This ensures that this @Before is always executed first
+    @Before(order = 0, value = "~@android")
+    public void setup()
+    {
+        clearImages();
 
         Driver.setBrowser(System.getProperty("browser"));
         Driver.startWebDriver();
@@ -85,20 +90,7 @@ public class CucumberBeforeAfter
     @Before(order = 0, value = "@android")
     public void androidSetup()
     {
-        // Delete all screen shots from previous execution
-        // THIS SHOULD BE EXECUTED ONLY ONCE
-        if (!imagesCleaned)
-        {
-            File reportsDirectory = new File("reports/html-reports");
-            final File[] files = reportsDirectory.listFiles((dir, name) -> {
-                return name.matches(".*.jpeg");
-            });
-            for (final File file : files)
-            {
-                file.delete();
-            }
-            imagesCleaned = true;
-        }
+        clearImages();
 
         MobileDriver.startAndroidDriver();
         contactPage = new ContactPage();
@@ -123,14 +115,14 @@ public class CucumberBeforeAfter
         }
     }
 
-//    @After(order = 0, value = "@android")
-//    public void removeContacts(Scenario scenario)
-//    {
-//        androidSetup();
-//        System.out.println("Removing created contacts");
-//        contactPage.deleteContacts();
-//
-//        System.out.println("Removal of contacts complete");
-//        androidTearDown(scenario);
-//    }
+    @After(order = 0, value = "@android")
+    public void removeContacts(Scenario scenario)
+    {
+        androidSetup();
+        System.out.println("Removing created contacts");
+        contactPage.getElementByAttributeText("All contacts").click();
+        contactPage.deleteContacts();
+        System.out.println("Removal of contacts complete");
+        androidTearDown(scenario);
+    }
 }
