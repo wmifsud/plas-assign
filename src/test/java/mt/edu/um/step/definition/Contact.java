@@ -51,7 +51,7 @@ public class Contact
         contactPage.getContactText(text, attribute).sendKeys(text);
     }
 
-    @Then("^(.*) is under (.*)$")
+    @Then("^(.*) is set to (.*)$")
     public void contactCreationAssertions(String text, String attribute)
     {
         switch (attribute)

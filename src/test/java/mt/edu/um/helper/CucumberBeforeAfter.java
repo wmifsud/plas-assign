@@ -72,7 +72,7 @@ public class CucumberBeforeAfter
         }
     }
 
-    @After(value = "@note,@search,@5b,@tag,~@android")
+    @After(value = "@note,@search,@5b,@tag")
     public void removeNotes()
     {
         System.out.println("Removing created notes");
