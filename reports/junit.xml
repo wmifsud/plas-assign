@@ -1,207 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="20" time="1416.047806">
-<testcase classname="Login" name="Login from sign in button" time="59.747842">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-When I click on the sign in link from sign in button........................passed
-And I enter waylonmifsud@gmail.com as emailaddress..........................passed
-And I enter 3v3rn0t3 as password............................................passed
-And I click the sign up button..............................................passed
-Then I am logged in.........................................................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="229.7231">
+<testcase classname="Contact" name="Create new contact" time="62.172629">
+<system-out><![CDATA[Given I select create new contact icon......................................passed
+And I enter testing123 as Name..............................................passed
+And I enter w@w.com as Email................................................passed
+And I enter 35679797979 as Phone............................................passed
+And I enter 35621212121 as Phone............................................passed
+And I select navigate up icon...............................................passed
+Then testing123 is set to contact name......................................passed
+Then 35679797979 is set to Mobile...........................................passed
+Then 35621212121 is set to Home.............................................passed
+Then w@w.com is set to Home.................................................passed
+Then testing123 is set to All contacts......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login" name="Login from header menu" time="55.559104">
-<system-out><![CDATA[Given I navigate to https://evernote.com/?var=1.............................passed
-When I click on the sign in link from header menu...........................passed
-And I enter waylonmifsud@gmail.com as emailaddress..........................passed
-And I enter 3v3rn0t3 as password............................................passed
-And I click the sign up button..............................................passed
-Then I am logged in.........................................................passed
+<testcase classname="Contact" name="Search for contact" time="103.802236">
+<system-out><![CDATA[Given I select create new contact icon......................................passed
+And I enter testing123 as Name..............................................passed
+And I enter w@w.com as Email................................................passed
+And I enter 35679797979 as Phone............................................passed
+And I enter 35621212121 as Phone............................................passed
+And I select navigate up icon...............................................passed
+Then testing123 is set to All contacts......................................passed
+And I select testing123 contact.............................................passed
+And I select edit icon......................................................passed
+And I change 35679797979 to 35699999999.....................................passed
+And I change testing123 to test456ing.......................................passed
+And I select navigate up icon...............................................passed
+Then test456ing is set to contact name......................................passed
+Then 35699999999 is set to Mobile...........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login" name="Login from header menu sign in link" time="37.566364">
-<system-out><![CDATA[Given I navigate to https://evernote.com/?var=2.............................passed
-When I click on the sign in link from sign in header button.................passed
-And I enter waylonmifsud@gmail.com as emailaddress..........................passed
-And I enter 3v3rn0t3 as password............................................passed
-And I click the sign up button..............................................passed
-Then I am logged in.........................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Login" name="Login with no credentials" time="33.035679">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-When I click on the sign in link from sign in button........................passed
-And I click the sign up button..............................................passed
-Then the error message specifies that This is a required field..............passed
-]]></system-out>
-</testcase>
-<testcase classname="Login" name="Login with incorrect credentials" time="30.381291">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-When I click on the sign in link from sign in button........................passed
-And I enter www@www.com as emailaddress.....................................passed
-And I enter wwwggg as password..............................................passed
-And I click the sign up button..............................................passed
-Then the error message specifies that Incorrect username and/or password....passed
-]]></system-out>
-</testcase>
-<testcase classname="Login" name="Login with incorrect credentials 2" time="35.448214">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-When I click on the sign in link from sign in button........................passed
-And I enter a@ggg.co.uk as emailaddress.....................................passed
-And I enter aaa as password.................................................passed
-And I click the sign up button..............................................passed
-Then the error message specifies that Incorrect username and/or password....passed
-]]></system-out>
-</testcase>
-<testcase classname="Login" name="Login with incorrect credentials 3" time="38.080289">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-When I click on the sign in link from sign in button........................passed
-And I enter xyz@abc.it as emailaddress......................................passed
-And I enter rabbit as password..............................................passed
-And I click the sign up button..............................................passed
-Then the error message specifies that Incorrect username and/or password....passed
-]]></system-out>
-</testcase>
-<testcase classname="Login" name="Login with incorrect credentials 4" time="28.981887">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-When I click on the sign in link from sign in button........................passed
-And I enter def@qwe.de as emailaddress......................................passed
-And I enter horses as password..............................................passed
-And I click the sign up button..............................................passed
-Then the error message specifies that Incorrect username and/or password....passed
-]]></system-out>
-</testcase>
-<testcase classname="Login" name="Login with incorrect credentials 5" time="42.284734">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-When I click on the sign in link from sign in button........................passed
-And I enter gblabcref@rabobank.fr as emailaddress...........................passed
-And I enter qwerty as password..............................................passed
-And I click the sign up button..............................................passed
-Then the error message specifies that Incorrect username and/or password....passed
-]]></system-out>
-</testcase>
-<testcase classname="Note" name="Create New Note" time="80.972231">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 1 note with title as test title a and body as test body a....passed
-Then the test title a is in the notes list..................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Note" name="Create New Note Log Out and In and check that note is still there" time="87.957695">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 1 note with title as test title b and body as test body b....passed
-And I logout................................................................passed
-And I navigate to https://evernote.com......................................passed
-And I login with sign in link...............................................passed
-Then the test title b is in the notes list..................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Note" name="Shortcut functionality" time="90.039684">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 1 note with title as test title c and body as test body c....passed
-And I click the add to shortcut button......................................passed
-And I click the shortcuts button............................................passed
-Then the test title c is in the shortcuts list..............................passed
-]]></system-out>
-</testcase>
-<testcase classname="Note" name="Table functionality" time="95.420939">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 1 note with title as test title d and body as test body d....passed
-And I click the table button................................................passed
-And I create a 3x3 table....................................................passed
-Then the 3x3 table is created...............................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Note" name="Sorting of notes" time="109.340654">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 3 note with title as test sort title e and body as test sort body e.passed
-And I click the options button..............................................passed
-And I select the Title (ascending) sort order...............................passed
-Then the sort order should be Title in ascending sort order.................passed
-And I click the options button..............................................passed
-And I select the Title (descending) sort order..............................passed
-Then the sort order should be Title in descending sort order................passed
-And I click the options button..............................................passed
-And I select the Date Created (oldest first) sort order.....................passed
-Then the sort order should be Date Created in oldest first sort order.......passed
-And I click the options button..............................................passed
-And I select the Date Created (newest first) sort order.....................passed
-Then the sort order should be Date Created in newest first sort order.......passed
-]]></system-out>
-</testcase>
-<testcase classname="Notebook" name="Create New Notebook" time="70.893012">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I click the notebook button...........................................passed
-And I click the create new notebook button..................................passed
-And I set the notebook title as test notebook...............................passed
-And I create 1 note with title as test title a and body as test body a......passed
-Then test title a note is under the test notebook notebook..................passed
-And delete test notebook notebook...........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Search" name="Search for a note title" time="115.111216">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 3 note with title as test title a and body as test body a....passed
-And I click the search button...............................................passed
-And I search for test title a...............................................passed
-Then the 1 test title a is in the notes list................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Search" name="Search in a note body" time="96.396682">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 3 note with title as test title a and body as test body a....passed
-And I click the search button...............................................passed
-And I search for test body..................................................passed
-Then the 1 test title a is in the notes list................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Tag" name="Tag functionality" time="106.714095">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 3 note with title as test title a and body as test body a....passed
-And I assign tag to 1 test title a..........................................passed
-And I assign tag to 2 test title a..........................................passed
-And I click the tag button..................................................passed
-And I click on tag from the tag menu........................................passed
-Then the 1 test title a is in the notes list................................passed
-Then the 2 test title a is in the notes list................................passed
-And I click the tag button..................................................passed
-And I delete tag named tag..................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Trash" name="Trash functionality" time="114.727971">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I click the notebook button...........................................passed
-And I click the trash button................................................passed
-And I click the empty trash button..........................................passed
-And I click the notes button................................................passed
-And I create 3 note with title as test title a and body as test body a......passed
-And I delete all notes......................................................passed
-And I click the notebook button.............................................passed
-And I click the trash button................................................passed
-Then the 1 test title a is in the notes list................................passed
-Then the 2 test title a is in the notes list................................passed
-Then the 3 test title a is in the notes list................................passed
-And I click the empty trash button..........................................passed
-Then the trash is empty.....................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Trash" name="Trash Restore" time="87.388223">
-<system-out><![CDATA[Given I navigate to https://evernote.com....................................passed
-And I login with sign in link...............................................passed
-Given I create 1 note with title as test title b and body as test body b....passed
-And I delete all notes......................................................passed
-And I click the notebook button.............................................passed
-And I click the trash button................................................passed
-And I restore test title b..................................................passed
-And I click the notes button................................................passed
-Then the test title b is in the notes list..................................passed
+<testcase classname="Contact" name="Favorites functionality" time="63.748235">
+<system-out><![CDATA[Given I check that there are No favorites...................................passed
+And I select create new contact icon........................................passed
+And I enter testing123 as Name..............................................passed
+And I enter w@w.com as Email................................................passed
+And I enter 35679797979 as Phone............................................passed
+And I enter 35621212121 as Phone............................................passed
+And I select navigate up icon...............................................passed
+And I select favorites icon.................................................passed
+Then testing123 is set to Favorites.........................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

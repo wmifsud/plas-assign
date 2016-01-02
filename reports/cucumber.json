@@ -1,31 +1,40 @@
 [
   {
-    "line": 3,
+    "line": 2,
     "elements": [
       {
         "before": [
           {
             "result": {
-              "duration": 16788654039,
+              "duration": 2725870375,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.setup()"
+              "location": "CucumberBeforeAfter.androidSetup()"
             }
           }
         ],
-        "line": 5,
-        "name": "Login from sign in button",
+        "line": 3,
+        "name": "Create new contact",
         "description": "",
-        "id": "login;login-from-sign-in-button",
+        "id": "contact;create-new-contact",
         "after": [
           {
             "result": {
-              "duration": 185562715,
+              "duration": 451375874,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
+              "location": "CucumberBeforeAfter.androidTearDown(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 14797281319,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberBeforeAfter.removeContacts(Scenario)"
             }
           }
         ],
@@ -34,2819 +43,245 @@
         "steps": [
           {
             "result": {
-              "duration": 2804086205,
+              "duration": 1967350914,
               "status": "passed"
             },
-            "line": 6,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 23666226370,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "I click on the sign in link from sign in button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 151526248,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "I enter waylonmifsud@gmail.com as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "waylonmifsud@gmail.com",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 78728410,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "I enter 3v3rn0t3 as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3v3rn0t3",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 13787694567,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2285363057,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I am logged in",
-            "match": {
-              "location": "Login.loggedInCheck()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
             "line": 4,
-            "name": "@1a"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8905350212,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 14,
-        "name": "Login from header menu",
-        "description": "",
-        "id": "login;login-from-header-menu",
-        "after": [
-          {
-            "result": {
-              "duration": 169547602,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 15833594924,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I navigate to https://evernote.com/?var\u003d1",
+            "name": "I select create new contact icon",
             "match": {
               "arguments": [
                 {
-                  "val": "https://evernote.com/?var\u003d1",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 9030771507,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I click on the sign in link from header menu",
-            "match": {
-              "arguments": [
-                {
-                  "val": "header menu",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 161747370,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I enter waylonmifsud@gmail.com as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "waylonmifsud@gmail.com",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 93038814,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I enter 3v3rn0t3 as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3v3rn0t3",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 18369336841,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2995716832,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "I am logged in",
-            "match": {
-              "location": "Login.loggedInCheck()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 13,
-            "name": "@1a"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8449051010,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 23,
-        "name": "Login from header menu sign in link",
-        "description": "",
-        "id": "login;login-from-header-menu-sign-in-link",
-        "after": [
-          {
-            "result": {
-              "duration": 163336158,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 14456784872,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "I navigate to https://evernote.com/?var\u003d2",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com/?var\u003d2",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 253650213,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "I click on the sign in link from sign in header button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in header button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3979165661,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "I enter waylonmifsud@gmail.com as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "waylonmifsud@gmail.com",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 78675250,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "I enter 3v3rn0t3 as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3v3rn0t3",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 6459820991,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3725879877,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "I am logged in",
-            "match": {
-              "location": "Login.loggedInCheck()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 22,
-            "name": "@1a"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8087517653,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 32,
-        "name": "Login with no credentials",
-        "description": "",
-        "id": "login;login-with-no-credentials",
-        "after": [
-          {
-            "result": {
-              "duration": 161742464,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 2115948980,
-              "status": "passed"
-            },
-            "line": 33,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 21588634680,
-              "status": "passed"
-            },
-            "line": 34,
-            "name": "I click on the sign in link from sign in button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 934594052,
-              "status": "passed"
-            },
-            "line": 35,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 147240842,
-              "status": "passed"
-            },
-            "line": 36,
-            "name": "the error message specifies that This is a required field.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "This is a required field.",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.errorDisplayedCheck(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 31,
-            "name": "@1b"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7947655672,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 48,
-        "name": "Login with incorrect credentials",
-        "description": "",
-        "id": "login;login-with-incorrect-credentials;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 163773008,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1665335632,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 17671503826,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I click on the sign in link from sign in button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 145467169,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "I enter www@www.com as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "www@www.com",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 73183323,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "I enter wwwggg as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "wwwggg",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2666429708,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 47942877,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "the error message specifies that Incorrect username and/or password.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Incorrect username and/or password.",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.errorDisplayedCheck(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 38,
-            "name": "@1c"
-          },
-          {
-            "line": 2,
-            "name": "@login"
-          },
-          {
-            "line": 1,
-            "name": "@all"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8841638450,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 49,
-        "name": "Login with incorrect credentials",
-        "description": "",
-        "id": "login;login-with-incorrect-credentials;;3",
-        "after": [
-          {
-            "result": {
-              "duration": 154774846,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1896793282,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 21697447066,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I click on the sign in link from sign in button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 122349244,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "I enter a@ggg.co.uk as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "a@ggg.co.uk",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 64228635,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "I enter aaa as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "aaa",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2625836657,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 45146206,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "the error message specifies that Incorrect username and/or password.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Incorrect username and/or password.",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.errorDisplayedCheck(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 38,
-            "name": "@1c"
-          },
-          {
-            "line": 2,
-            "name": "@login"
-          },
-          {
-            "line": 1,
-            "name": "@all"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7410657441,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 50,
-        "name": "Login with incorrect credentials",
-        "description": "",
-        "id": "login;login-with-incorrect-credentials;;4",
-        "after": [
-          {
-            "result": {
-              "duration": 154682369,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1809237177,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 25669556669,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I click on the sign in link from sign in button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 164515511,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "I enter xyz@abc.it as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "xyz@abc.it",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 74305772,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "I enter rabbit as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "rabbit",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2742099892,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 55234270,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "the error message specifies that Incorrect username and/or password.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Incorrect username and/or password.",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.errorDisplayedCheck(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 38,
-            "name": "@1c"
-          },
-          {
-            "line": 2,
-            "name": "@login"
-          },
-          {
-            "line": 1,
-            "name": "@all"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8328590126,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 51,
-        "name": "Login with incorrect credentials",
-        "description": "",
-        "id": "login;login-with-incorrect-credentials;;5",
-        "after": [
-          {
-            "result": {
-              "duration": 161494623,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1928979667,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 15598889774,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I click on the sign in link from sign in button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 147764008,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "I enter def@qwe.de as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "def@qwe.de",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 77370377,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "I enter horses as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "horses",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2681924505,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 56873750,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "the error message specifies that Incorrect username and/or password.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Incorrect username and/or password.",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.errorDisplayedCheck(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 38,
-            "name": "@1c"
-          },
-          {
-            "line": 2,
-            "name": "@login"
-          },
-          {
-            "line": 1,
-            "name": "@all"
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7731735463,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 52,
-        "name": "Login with incorrect credentials",
-        "description": "",
-        "id": "login;login-with-incorrect-credentials;;6",
-        "after": [
-          {
-            "result": {
-              "duration": 158296373,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1880398856,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 29589441249,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I click on the sign in link from sign in button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in button",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.signInClick(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 154102620,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "I enter gblabcref@rabobank.fr as emailaddress",
-            "match": {
-              "arguments": [
-                {
-                  "val": "gblabcref@rabobank.fr",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputEmailAddress(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 72214768,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "I enter qwerty as password",
-            "match": {
-              "arguments": [
-                {
-                  "val": "qwerty",
-                  "offset": 8
-                }
-              ],
-              "location": "Login.inputPassword(String)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2638270640,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "I click the sign up button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign up",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 60274272,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "the error message specifies that Incorrect username and/or password.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Incorrect username and/or password.",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.errorDisplayedCheck(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 38,
-            "name": "@1c"
-          },
-          {
-            "line": 2,
-            "name": "@login"
-          },
-          {
-            "line": 1,
-            "name": "@all"
-          }
-        ]
-      }
-    ],
-    "name": "Login",
-    "description": "",
-    "id": "login",
-    "keyword": "Feature",
-    "uri": "login/login.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@all"
-      },
-      {
-        "line": 2,
-        "name": "@login"
-      }
-    ]
-  },
-  {
-    "line": 3,
-    "elements": [
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1904003252,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 41895094118,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8655396263,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 9,
-        "name": "Create New Note",
-        "description": "",
-        "id": "note;create-new-note",
-        "after": [
-          {
-            "result": {
-              "duration": 16620338443,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
-            }
-          },
-          {
-            "result": {
-              "duration": 251201116,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 9552174279,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I create 1 note with title as test title a and body as test body a",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1",
+                  "val": "create new contact",
                   "offset": 9
                 },
                 {
-                  "val": "test title a",
-                  "offset": 30
-                },
-                {
-                  "val": "test body a",
-                  "offset": 55
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2094023289,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "the test title a is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test title a",
-                  "offset": 4
-                },
-                {
-                  "val": "notes",
-                  "offset": 27
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 8,
-            "name": "@2a"
-          }
-        ]
-      },
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1855889820,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 32674928314,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7519004033,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 14,
-        "name": "Create New Note Log Out and In and check that note is still there",
-        "description": "",
-        "id": "note;create-new-note-log-out-and-in-and-check-that-note-is-still-there",
-        "after": [
-          {
-            "result": {
-              "duration": 16584166914,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
-            }
-          },
-          {
-            "result": {
-              "duration": 250524620,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 13948174644,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I create 1 note with title as test title b and body as test body b",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1",
-                  "offset": 9
-                },
-                {
-                  "val": "test title b",
-                  "offset": 30
-                },
-                {
-                  "val": "test body b",
-                  "offset": 55
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2959478473,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I logout",
-            "match": {
-              "location": "Login.logout()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 15849459,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 10028389719,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2121289011,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "the test title b is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test title b",
-                  "offset": 4
-                },
-                {
-                  "val": "notes",
-                  "offset": 27
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 13,
-            "name": "@2b"
-          }
-        ]
-      },
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 2464690863,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 39748420470,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7301810272,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 22,
-        "name": "Shortcut functionality",
-        "description": "",
-        "id": "note;shortcut-functionality",
-        "after": [
-          {
-            "result": {
-              "duration": 21127832798,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
-            }
-          },
-          {
-            "result": {
-              "duration": 240546956,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 15574261051,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "I create 1 note with title as test title c and body as test body c",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1",
-                  "offset": 9
-                },
-                {
-                  "val": "test title c",
-                  "offset": 30
-                },
-                {
-                  "val": "test body c",
-                  "offset": 55
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 611520104,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "I click the add to shortcut button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "add to shortcut",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 875308488,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "I click the shortcuts button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "shortcuts",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2095292500,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "the test title c is in the shortcuts list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test title c",
-                  "offset": 4
-                },
-                {
-                  "val": "shortcuts",
-                  "offset": 27
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 21,
-            "name": "@2c"
-          }
-        ]
-      },
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1862609210,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 32594644408,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7843355035,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 29,
-        "name": "Table functionality",
-        "description": "",
-        "id": "note;table-functionality",
-        "after": [
-          {
-            "result": {
-              "duration": 16066619618,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
-            }
-          },
-          {
-            "result": {
-              "duration": 287697706,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 11614394705,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "I create 1 note with title as test title d and body as test body d",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1",
-                  "offset": 9
-                },
-                {
-                  "val": "test title d",
-                  "offset": 30
-                },
-                {
-                  "val": "test body d",
-                  "offset": 55
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1303659568,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "I click the table button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "table",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 18676650479,
-              "status": "passed"
-            },
-            "line": 32,
-            "name": "I create a 3x3 table",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 11
-                },
-                {
-                  "val": "3",
-                  "offset": 13
-                }
-              ],
-              "location": "Note.createTable(int,int)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5171307953,
-              "status": "passed"
-            },
-            "line": 33,
-            "name": "the 3x3 table is created",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 4
-                },
-                {
-                  "val": "3",
-                  "offset": 6
-                }
-              ],
-              "location": "Note.assertTableCreation(int,int)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 28,
-            "name": "@2d"
-          }
-        ]
-      },
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1817935326,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 35170753518,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8079079996,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 36,
-        "name": "Sorting of notes",
-        "description": "",
-        "id": "note;sorting-of-notes",
-        "after": [
-          {
-            "result": {
-              "duration": 22059399087,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
-            }
-          },
-          {
-            "result": {
-              "duration": 256782640,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 28657885352,
-              "status": "passed"
-            },
-            "line": 37,
-            "name": "I create 3 note with title as test sort title e and body as test sort body e",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 9
-                },
-                {
-                  "val": "test sort title e",
-                  "offset": 30
-                },
-                {
-                  "val": "test sort body e",
-                  "offset": 60
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 196005019,
-              "status": "passed"
-            },
-            "line": 38,
-            "name": "I click the options button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "options",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2661571663,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "I select the Title (ascending) sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Title (ascending)",
-                  "offset": 13
-                }
-              ],
-              "location": "Note.selectSortMethodOption(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 796473820,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "the sort order should be Title in ascending sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Title",
-                  "offset": 25
-                },
-                {
-                  "val": "ascending",
-                  "offset": 34
-                }
-              ],
-              "location": "Note.assertSortingIsCorrect(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 357577353,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I click the options button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "options",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2305983934,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "I select the Title (descending) sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Title (descending)",
-                  "offset": 13
-                }
-              ],
-              "location": "Note.selectSortMethodOption(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 610811166,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "the sort order should be Title in descending sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Title",
-                  "offset": 25
-                },
-                {
-                  "val": "descending",
-                  "offset": 34
-                }
-              ],
-              "location": "Note.assertSortingIsCorrect(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 121665806,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "I click the options button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "options",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2399209819,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "I select the Date Created (oldest first) sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Date Created (oldest first)",
-                  "offset": 13
-                }
-              ],
-              "location": "Note.selectSortMethodOption(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 690602341,
-              "status": "passed"
-            },
-            "line": 46,
-            "name": "the sort order should be Date Created in oldest first sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Date Created",
-                  "offset": 25
-                },
-                {
-                  "val": "oldest first",
-                  "offset": 41
-                }
-              ],
-              "location": "Note.assertSortingIsCorrect(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 326016108,
-              "status": "passed"
-            },
-            "line": 47,
-            "name": "I click the options button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "options",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2212562780,
-              "status": "passed"
-            },
-            "line": 48,
-            "name": "I select the Date Created (newest first) sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Date Created (newest first)",
-                  "offset": 13
-                }
-              ],
-              "location": "Note.selectSortMethodOption(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 620337845,
-              "status": "passed"
-            },
-            "line": 49,
-            "name": "the sort order should be Date Created in newest first sort order",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Date Created",
-                  "offset": 25
-                },
-                {
-                  "val": "newest first",
-                  "offset": 41
-                }
-              ],
-              "location": "Note.assertSortingIsCorrect(String,String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 35,
-            "name": "@2e"
-          }
-        ]
-      }
-    ],
-    "name": "Note",
-    "description": "",
-    "id": "note",
-    "keyword": "Feature",
-    "uri": "note/note.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@all"
-      },
-      {
-        "line": 2,
-        "name": "@note"
-      }
-    ]
-  },
-  {
-    "line": 3,
-    "elements": [
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1839107848,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 38250693754,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 8023562809,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 9,
-        "name": "Create New Notebook",
-        "description": "",
-        "id": "notebook;create-new-notebook",
-        "after": [
-          {
-            "result": {
-              "duration": 197971436,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 3841466860,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I click the notebook button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "notebook",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 759346358,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I click the create new notebook button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "create new notebook",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1541329390,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I set the notebook title as test notebook",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test notebook",
+                  "val": "icon",
                   "offset": 28
                 }
               ],
-              "location": "Notebook.inputSearchBox(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 8741684324,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "I create 1 note with title as test title a and body as test body a",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1",
-                  "offset": 9
-                },
-                {
-                  "val": "test title a",
-                  "offset": 30
-                },
-                {
-                  "val": "test body a",
-                  "offset": 55
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2663517170,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "test title a note is under the test notebook notebook",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test title a",
-                  "offset": 0
-                },
-                {
-                  "val": "test notebook",
-                  "offset": 31
-                }
-              ],
-              "location": "Notebook.assertNoteLinkedToNotebook(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5034332225,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "delete test notebook notebook",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test notebook",
-                  "offset": 7
-                }
-              ],
-              "location": "Notebook.deleteNotebook(String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "line": 8,
-            "name": "@4"
-          }
-        ]
-      }
-    ],
-    "name": "Notebook",
-    "description": "",
-    "id": "notebook",
-    "keyword": "Feature",
-    "uri": "notebook/notebook.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@all"
-      },
-      {
-        "line": 2,
-        "name": "@notebook"
-      }
-    ]
-  },
-  {
-    "line": 3,
-    "elements": [
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1541671627,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
+              "location": "Contact.selectContactIcon(String,String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 50383850045,
+              "duration": 7262565977,
               "status": "passed"
             },
-            "line": 6,
-            "name": "I login with sign in link",
+            "line": 5,
+            "name": "I enter testing123 as Name",
             "match": {
               "arguments": [
                 {
-                  "val": "sign in",
-                  "offset": 13
+                  "val": "testing123",
+                  "offset": 8
+                },
+                {
+                  "val": "Name",
+                  "offset": 22
                 }
               ],
-              "location": "Login.login(String)"
+              "location": "Contact.placeContactText(String,String)"
             },
             "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7597324059,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 9,
-        "name": "Search for a note title",
-        "description": "",
-        "id": "search;search-for-a-note-title",
-        "after": [
-          {
-            "result": {
-              "duration": 22438531140,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
-            }
           },
           {
             "result": {
-              "duration": 253506290,
+              "duration": 6832671733,
               "status": "passed"
             },
+            "line": 6,
+            "name": "I enter w@w.com as Email",
             "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
+              "arguments": [
+                {
+                  "val": "w@w.com",
+                  "offset": 8
+                },
+                {
+                  "val": "Email",
+                  "offset": 19
+                }
+              ],
+              "location": "Contact.placeContactText(String,String)"
+            },
+            "keyword": "And "
+          },
           {
             "result": {
-              "duration": 30002155485,
+              "duration": 7408859588,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I enter 35679797979 as Phone",
+            "match": {
+              "arguments": [
+                {
+                  "val": "35679797979",
+                  "offset": 8
+                },
+                {
+                  "val": "Phone",
+                  "offset": 23
+                }
+              ],
+              "location": "Contact.placeContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7467846064,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I enter 35621212121 as Phone",
+            "match": {
+              "arguments": [
+                {
+                  "val": "35621212121",
+                  "offset": 8
+                },
+                {
+                  "val": "Phone",
+                  "offset": 23
+                }
+              ],
+              "location": "Contact.placeContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1509853257,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I select navigate up icon",
+            "match": {
+              "arguments": [
+                {
+                  "val": "navigate up",
+                  "offset": 9
+                },
+                {
+                  "val": "icon",
+                  "offset": 21
+                }
+              ],
+              "location": "Contact.selectContactIcon(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4072466080,
               "status": "passed"
             },
             "line": 10,
-            "name": "I create 3 note with title as test title a and body as test body a",
+            "name": "testing123 is set to contact name",
             "match": {
               "arguments": [
                 {
-                  "val": "3",
-                  "offset": 9
+                  "val": "testing123",
+                  "offset": 0
                 },
                 {
-                  "val": "test title a",
-                  "offset": 30
-                },
-                {
-                  "val": "test body a",
-                  "offset": 55
+                  "val": "contact name",
+                  "offset": 21
                 }
               ],
-              "location": "Note.createNewNote(int,String,String)"
+              "location": "Contact.contactCreationAssertions(String,String)"
             },
-            "keyword": "Given "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 408537403,
+              "duration": 123888705,
               "status": "passed"
             },
             "line": 11,
-            "name": "I click the search button",
+            "name": "35679797979 is set to Mobile",
             "match": {
               "arguments": [
                 {
-                  "val": "search",
-                  "offset": 12
+                  "val": "35679797979",
+                  "offset": 0
+                },
+                {
+                  "val": "Mobile",
+                  "offset": 22
                 }
               ],
-              "location": "Button.buttonClick(String)"
+              "location": "Contact.contactCreationAssertions(String,String)"
             },
-            "keyword": "And "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 331738485,
+              "duration": 170300618,
               "status": "passed"
             },
             "line": 12,
-            "name": "I search for test title a",
+            "name": "35621212121 is set to Home",
             "match": {
               "arguments": [
                 {
-                  "val": "test title a",
-                  "offset": 13
+                  "val": "35621212121",
+                  "offset": 0
+                },
+                {
+                  "val": "Home",
+                  "offset": 22
                 }
               ],
-              "location": "Search.inputSearchBox(String)"
+              "location": "Contact.contactCreationAssertions(String,String)"
             },
-            "keyword": "And "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 2153901566,
+              "duration": 207503746,
               "status": "passed"
             },
             "line": 13,
-            "name": "the 1 test title a is in the notes list",
+            "name": "w@w.com is set to Home",
             "match": {
               "arguments": [
                 {
-                  "val": "1 test title a",
-                  "offset": 4
+                  "val": "w@w.com",
+                  "offset": 0
                 },
                 {
-                  "val": "notes",
-                  "offset": 29
+                  "val": "Home",
+                  "offset": 18
                 }
               ],
-              "location": "Note.assertNoteCreated(String,String)"
+              "location": "Contact.contactCreationAssertions(String,String)"
             },
             "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 8,
-            "name": "@3a"
-          }
-        ]
-      },
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 2063303964,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
           },
           {
             "result": {
-              "duration": 32067943639,
+              "duration": 7174794519,
               "status": "passed"
             },
-            "line": 6,
-            "name": "I login with sign in link",
+            "line": 14,
+            "name": "testing123 is set to All contacts",
             "match": {
               "arguments": [
                 {
-                  "val": "sign in",
-                  "offset": 13
+                  "val": "testing123",
+                  "offset": 0
+                },
+                {
+                  "val": "All contacts",
+                  "offset": 21
                 }
               ],
-              "location": "Login.login(String)"
+              "location": "Contact.contactCreationAssertions(String,String)"
             },
-            "keyword": "And "
+            "keyword": "Then "
           }
         ]
       },
@@ -2854,35 +289,35 @@
         "before": [
           {
             "result": {
-              "duration": 6762346104,
+              "duration": 2024284013,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.setup()"
+              "location": "CucumberBeforeAfter.androidSetup()"
             }
           }
         ],
         "line": 16,
-        "name": "Search in a note body",
+        "name": "Search for contact",
         "description": "",
-        "id": "search;search-in-a-note-body",
+        "id": "contact;search-for-contact",
         "after": [
           {
             "result": {
-              "duration": 22588976791,
+              "duration": 437674262,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
+              "location": "CucumberBeforeAfter.androidTearDown(Scenario)"
             }
           },
           {
             "result": {
-              "duration": 246360031,
+              "duration": 14670806103,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
+              "location": "CucumberBeforeAfter.removeContacts(Scenario)"
             }
           }
         ],
@@ -2891,781 +326,311 @@
         "steps": [
           {
             "result": {
-              "duration": 29920767193,
+              "duration": 2091380816,
               "status": "passed"
             },
             "line": 17,
-            "name": "I create 3 note with title as test title a and body as test body a",
+            "name": "I select create new contact icon",
             "match": {
               "arguments": [
                 {
-                  "val": "3",
+                  "val": "create new contact",
                   "offset": 9
                 },
                 {
-                  "val": "test title a",
-                  "offset": 30
-                },
-                {
-                  "val": "test body a",
-                  "offset": 55
+                  "val": "icon",
+                  "offset": 28
                 }
               ],
-              "location": "Note.createNewNote(int,String,String)"
+              "location": "Contact.selectContactIcon(String,String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 262884890,
+              "duration": 6874415745,
               "status": "passed"
             },
             "line": 18,
-            "name": "I click the search button",
+            "name": "I enter testing123 as Name",
             "match": {
               "arguments": [
                 {
-                  "val": "search",
-                  "offset": 12
+                  "val": "testing123",
+                  "offset": 8
+                },
+                {
+                  "val": "Name",
+                  "offset": 22
                 }
               ],
-              "location": "Button.buttonClick(String)"
+              "location": "Contact.placeContactText(String,String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 342340130,
+              "duration": 7384411317,
               "status": "passed"
             },
             "line": 19,
-            "name": "I search for test body",
+            "name": "I enter w@w.com as Email",
             "match": {
               "arguments": [
                 {
-                  "val": "test body",
-                  "offset": 13
-                }
-              ],
-              "location": "Search.inputSearchBox(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2141759645,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "the 1 test title a is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1 test title a",
-                  "offset": 4
+                  "val": "w@w.com",
+                  "offset": 8
                 },
                 {
-                  "val": "notes",
-                  "offset": 29
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 15,
-            "name": "@3b"
-          }
-        ]
-      }
-    ],
-    "name": "Search",
-    "description": "",
-    "id": "search",
-    "keyword": "Feature",
-    "uri": "search/search.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@all"
-      },
-      {
-        "line": 2,
-        "name": "@search"
-      }
-    ]
-  },
-  {
-    "line": 3,
-    "elements": [
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1507579566,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 26845387144,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7628853632,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 9,
-        "name": "Tag functionality",
-        "description": "",
-        "id": "tag;tag-functionality",
-        "after": [
-          {
-            "result": {
-              "duration": 21349886564,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
-            }
-          },
-          {
-            "result": {
-              "duration": 301569306,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 30429489539,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I create 3 note with title as test title a and body as test body a",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 9
-                },
-                {
-                  "val": "test title a",
-                  "offset": 30
-                },
-                {
-                  "val": "test body a",
-                  "offset": 55
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 3167012047,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I assign tag to 1 test title a",
-            "match": {
-              "arguments": [
-                {
-                  "val": "tag",
-                  "offset": 9
-                },
-                {
-                  "val": "1 test title a",
-                  "offset": 16
-                }
-              ],
-              "location": "Tag.assignTagToNote(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2867380812,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I assign tag to 2 test title a",
-            "match": {
-              "arguments": [
-                {
-                  "val": "tag",
-                  "offset": 9
-                },
-                {
-                  "val": "2 test title a",
-                  "offset": 16
-                }
-              ],
-              "location": "Tag.assignTagToNote(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 792162190,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "I click the tag button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "tag",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 4355091965,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I click on tag from the tag menu",
-            "match": {
-              "arguments": [
-                {
-                  "val": "tag",
-                  "offset": 11
-                }
-              ],
-              "location": "Tag.selectTag(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2141584828,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the 1 test title a is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1 test title a",
-                  "offset": 4
-                },
-                {
-                  "val": "notes",
-                  "offset": 29
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2078723688,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "the 2 test title a is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "2 test title a",
-                  "offset": 4
-                },
-                {
-                  "val": "notes",
-                  "offset": 29
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 129292793,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I click the tag button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "tag",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3120080524,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I delete tag named tag",
-            "match": {
-              "arguments": [
-                {
-                  "val": "tag",
+                  "val": "Email",
                   "offset": 19
                 }
               ],
-              "location": "Tag.deleteTag(String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "line": 8,
-            "name": "@6"
-          }
-        ]
-      }
-    ],
-    "name": "Tag",
-    "description": "",
-    "id": "tag",
-    "keyword": "Feature",
-    "uri": "tag/tag.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@all"
-      },
-      {
-        "line": 2,
-        "name": "@tag"
-      }
-    ]
-  },
-  {
-    "line": 3,
-    "elements": [
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1452709858,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://evernote.com",
-                  "offset": 14
-                }
-              ],
-              "location": "Navigation.iNavigateTo(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 33473999040,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I login with sign in link",
-            "match": {
-              "arguments": [
-                {
-                  "val": "sign in",
-                  "offset": 13
-                }
-              ],
-              "location": "Login.login(String)"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7206125031,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.setup()"
-            }
-          }
-        ],
-        "line": 9,
-        "name": "Trash functionality",
-        "description": "",
-        "id": "trash;trash-functionality",
-        "after": [
-          {
-            "result": {
-              "duration": 185626641,
-              "status": "passed"
-            },
-            "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 2613344203,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I click the notebook button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "notebook",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2304080688,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I click the trash button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "trash",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
+              "location": "Contact.placeContactText(String,String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 8000380929,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I click the empty trash button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "empty trash",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 644954314,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "I click the notes button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "notes",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 30603421809,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I create 3 note with title as test title a and body as test body a",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 9
-                },
-                {
-                  "val": "test title a",
-                  "offset": 30
-                },
-                {
-                  "val": "test body a",
-                  "offset": 55
-                }
-              ],
-              "location": "Note.createNewNote(int,String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 11858513094,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I delete all notes",
-            "match": {
-              "location": "Trash.deleteAllNotes()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 230402268,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I click the notebook button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "notebook",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2156289024,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I click the trash button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "trash",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2240764446,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "the 1 test title a is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1 test title a",
-                  "offset": 4
-                },
-                {
-                  "val": "notes",
-                  "offset": 29
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2180946459,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "the 2 test title a is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "2 test title a",
-                  "offset": 4
-                },
-                {
-                  "val": "notes",
-                  "offset": 29
-                }
-              ],
-              "location": "Note.assertNoteCreated(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 2097206972,
+              "duration": 7427713731,
               "status": "passed"
             },
             "line": 20,
-            "name": "the 3 test title a is in the notes list",
+            "name": "I enter 35679797979 as Phone",
             "match": {
               "arguments": [
                 {
-                  "val": "3 test title a",
-                  "offset": 4
+                  "val": "35679797979",
+                  "offset": 8
                 },
                 {
-                  "val": "notes",
-                  "offset": 29
+                  "val": "Phone",
+                  "offset": 23
                 }
               ],
-              "location": "Note.assertNoteCreated(String,String)"
+              "location": "Contact.placeContactText(String,String)"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 7450516290,
+              "duration": 7783460087,
               "status": "passed"
             },
             "line": 21,
-            "name": "I click the empty trash button",
+            "name": "I enter 35621212121 as Phone",
             "match": {
               "arguments": [
                 {
-                  "val": "empty trash",
-                  "offset": 12
+                  "val": "35621212121",
+                  "offset": 8
+                },
+                {
+                  "val": "Phone",
+                  "offset": 23
                 }
               ],
-              "location": "Button.buttonClick(String)"
+              "location": "Contact.placeContactText(String,String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 28690425,
+              "duration": 1508969128,
               "status": "passed"
             },
             "line": 22,
-            "name": "the trash is empty",
-            "match": {
-              "location": "Trash.assertTrashEmpty()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 8,
-            "name": "@5a"
-          }
-        ]
-      },
-      {
-        "line": 4,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 2671503326,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I navigate to https://evernote.com",
+            "name": "I select navigate up icon",
             "match": {
               "arguments": [
                 {
-                  "val": "https://evernote.com",
-                  "offset": 14
+                  "val": "navigate up",
+                  "offset": 9
+                },
+                {
+                  "val": "icon",
+                  "offset": 21
                 }
               ],
-              "location": "Navigation.iNavigateTo(String)"
+              "location": "Contact.selectContactIcon(String,String)"
             },
-            "keyword": "Given "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 38742259460,
+              "duration": 10849847112,
               "status": "passed"
             },
-            "line": 6,
-            "name": "I login with sign in link",
+            "line": 23,
+            "name": "testing123 is set to All contacts",
             "match": {
               "arguments": [
                 {
-                  "val": "sign in",
-                  "offset": 13
+                  "val": "testing123",
+                  "offset": 0
+                },
+                {
+                  "val": "All contacts",
+                  "offset": 21
                 }
               ],
-              "location": "Login.login(String)"
+              "location": "Contact.contactCreationAssertions(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 233052170,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I select testing123 contact",
+            "match": {
+              "arguments": [
+                {
+                  "val": "testing123",
+                  "offset": 9
+                },
+                {
+                  "val": "contact",
+                  "offset": 20
+                }
+              ],
+              "location": "Contact.selectContactIcon(String,String)"
             },
             "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4575198216,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I select edit icon",
+            "match": {
+              "arguments": [
+                {
+                  "val": "edit",
+                  "offset": 9
+                },
+                {
+                  "val": "icon",
+                  "offset": 14
+                }
+              ],
+              "location": "Contact.selectContactIcon(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14632551726,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I change 35679797979 to 35699999999",
+            "match": {
+              "arguments": [
+                {
+                  "val": "35679797979",
+                  "offset": 9
+                },
+                {
+                  "val": "35699999999",
+                  "offset": 24
+                }
+              ],
+              "location": "Contact.updateContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14395722816,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "I change testing123 to test456ing",
+            "match": {
+              "arguments": [
+                {
+                  "val": "testing123",
+                  "offset": 9
+                },
+                {
+                  "val": "test456ing",
+                  "offset": 23
+                }
+              ],
+              "location": "Contact.updateContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 954137336,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "I select navigate up icon",
+            "match": {
+              "arguments": [
+                {
+                  "val": "navigate up",
+                  "offset": 9
+                },
+                {
+                  "val": "icon",
+                  "offset": 21
+                }
+              ],
+              "location": "Contact.selectContactIcon(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7844353823,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "test456ing is set to contact name",
+            "match": {
+              "arguments": [
+                {
+                  "val": "test456ing",
+                  "offset": 0
+                },
+                {
+                  "val": "contact name",
+                  "offset": 21
+                }
+              ],
+              "location": "Contact.contactCreationAssertions(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 114257906,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "35699999999 is set to Mobile",
+            "match": {
+              "arguments": [
+                {
+                  "val": "35699999999",
+                  "offset": 0
+                },
+                {
+                  "val": "Mobile",
+                  "offset": 22
+                }
+              ],
+              "location": "Contact.contactCreationAssertions(String,String)"
+            },
+            "keyword": "Then "
           }
         ]
       },
@@ -3673,35 +638,35 @@
         "before": [
           {
             "result": {
-              "duration": 8051518469,
+              "duration": 1938830406,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.setup()"
+              "location": "CucumberBeforeAfter.androidSetup()"
             }
           }
         ],
-        "line": 25,
-        "name": "Trash Restore",
+        "line": 32,
+        "name": "Favorites functionality",
         "description": "",
-        "id": "trash;trash-restore",
+        "id": "contact;favorites-functionality",
         "after": [
           {
             "result": {
-              "duration": 15848415859,
+              "duration": 474342338,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.removeNotes()"
+              "location": "CucumberBeforeAfter.androidTearDown(Scenario)"
             }
           },
           {
             "result": {
-              "duration": 239309675,
+              "duration": 12766210014,
               "status": "passed"
             },
             "match": {
-              "location": "CucumberBeforeAfter.tearDown(Scenario)"
+              "location": "CucumberBeforeAfter.removeContacts(Scenario)"
             }
           }
         ],
@@ -3710,158 +675,210 @@
         "steps": [
           {
             "result": {
-              "duration": 9091174191,
+              "duration": 5556002002,
               "status": "passed"
             },
-            "line": 26,
-            "name": "I create 1 note with title as test title b and body as test body b",
+            "line": 33,
+            "name": "I check that there are No favorites.",
             "match": {
               "arguments": [
                 {
-                  "val": "1",
-                  "offset": 9
-                },
-                {
-                  "val": "test title b",
-                  "offset": 30
-                },
-                {
-                  "val": "test body b",
-                  "offset": 55
+                  "val": "No favorites.",
+                  "offset": 23
                 }
               ],
-              "location": "Note.createNewNote(int,String,String)"
+              "location": "Contact.noFavorites(String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 5072314241,
+              "duration": 781625290,
               "status": "passed"
             },
-            "line": 27,
-            "name": "I delete all notes",
-            "match": {
-              "location": "Trash.deleteAllNotes()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 262159355,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "I click the notebook button",
+            "line": 34,
+            "name": "I select create new contact icon",
             "match": {
               "arguments": [
                 {
-                  "val": "notebook",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2249079230,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "I click the trash button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "trash",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2309595395,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "I restore test title b",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test title b",
-                  "offset": 10
-                }
-              ],
-              "location": "Trash.restoreNote(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 741719632,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "I click the notes button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "notes",
-                  "offset": 12
-                }
-              ],
-              "location": "Button.buttonClick(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2109173957,
-              "status": "passed"
-            },
-            "line": 32,
-            "name": "the test title b is in the notes list",
-            "match": {
-              "arguments": [
-                {
-                  "val": "test title b",
-                  "offset": 4
+                  "val": "create new contact",
+                  "offset": 9
                 },
                 {
-                  "val": "notes",
-                  "offset": 27
+                  "val": "icon",
+                  "offset": 28
                 }
               ],
-              "location": "Note.assertNoteCreated(String,String)"
+              "location": "Contact.selectContactIcon(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6749673466,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "I enter testing123 as Name",
+            "match": {
+              "arguments": [
+                {
+                  "val": "testing123",
+                  "offset": 8
+                },
+                {
+                  "val": "Name",
+                  "offset": 22
+                }
+              ],
+              "location": "Contact.placeContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7736763128,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "I enter w@w.com as Email",
+            "match": {
+              "arguments": [
+                {
+                  "val": "w@w.com",
+                  "offset": 8
+                },
+                {
+                  "val": "Email",
+                  "offset": 19
+                }
+              ],
+              "location": "Contact.placeContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7725502227,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "I enter 35679797979 as Phone",
+            "match": {
+              "arguments": [
+                {
+                  "val": "35679797979",
+                  "offset": 8
+                },
+                {
+                  "val": "Phone",
+                  "offset": 23
+                }
+              ],
+              "location": "Contact.placeContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7019991265,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "I enter 35621212121 as Phone",
+            "match": {
+              "arguments": [
+                {
+                  "val": "35621212121",
+                  "offset": 8
+                },
+                {
+                  "val": "Phone",
+                  "offset": 23
+                }
+              ],
+              "location": "Contact.placeContactText(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1497299398,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "I select navigate up icon",
+            "match": {
+              "arguments": [
+                {
+                  "val": "navigate up",
+                  "offset": 9
+                },
+                {
+                  "val": "icon",
+                  "offset": 21
+                }
+              ],
+              "location": "Contact.selectContactIcon(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3723028499,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "I select favorites icon",
+            "match": {
+              "arguments": [
+                {
+                  "val": "favorites",
+                  "offset": 9
+                },
+                {
+                  "val": "icon",
+                  "offset": 19
+                }
+              ],
+              "location": "Contact.selectContactIcon(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7778966502,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "testing123 is set to Favorites",
+            "match": {
+              "arguments": [
+                {
+                  "val": "testing123",
+                  "offset": 0
+                },
+                {
+                  "val": "Favorites",
+                  "offset": 21
+                }
+              ],
+              "location": "Contact.contactCreationAssertions(String,String)"
             },
             "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 24,
-            "name": "@5b"
           }
         ]
       }
     ],
-    "name": "Trash",
+    "name": "Contact",
     "description": "",
-    "id": "trash",
+    "id": "contact",
     "keyword": "Feature",
-    "uri": "trash/trash.feature",
+    "uri": "contact/contact.feature",
     "tags": [
       {
         "line": 1,
-        "name": "@all"
-      },
-      {
-        "line": 2,
-        "name": "@trash"
+        "name": "@android"
       }
     ]
   }
