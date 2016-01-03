@@ -1,7 +1,6 @@
 package mt.edu.um.pom;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -43,25 +42,6 @@ public class LoginPage extends DriverPage
     public WebElement getHeaderMenu()
     {
         return webDriver.findElement(By.id("header-menu"));
-    }
-
-    public WebElement chrome()
-    {
-        return webDriver.findElement(By.className("js-global-menu-container"));
-    }
-
-    public WebElement chrome2()
-    {
-        List<WebElement> webElementList = webDriver.findElement(By.className("js-global-menu")).findElements(By.tagName("a"));
-
-        for (WebElement webElement : webElementList)
-        {
-            if (webElement.getAttribute("data-action").equals("sign-in"))
-            {
-                return webElement;
-            }
-        }
-        throw new ElementNotVisibleException("Element not visible: a");
     }
 
     public WebElement getUserNameTextBox()
