@@ -53,13 +53,13 @@ public class Note
         }
     }
 
-    @And("^I create a (\\d)x(\\d) table$")
+    @And("^I create a ([1-6])x([1-6]) table$")
     public void createTable(int column, int row)
     {
         notePage.createTable(column, row);
     }
 
-    @Then("^the (\\d)x(\\d) table is created$")
+    @Then("^the ([1-6])x([1-6]) table is created$")
     public void assertTableCreation(int column, int row)
     {
         NotePage.Table table = notePage.retrieveTable();
