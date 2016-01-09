@@ -13,7 +13,7 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 2725870375,
+  "duration": 2610433332,
   "status": "passed"
 });
 formatter.scenario({
@@ -93,7 +93,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 1967350914,
+  "duration": 2150202714,
   "status": "passed"
 });
 formatter.match({
@@ -110,7 +110,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7262565977,
+  "duration": 7172535831,
   "status": "passed"
 });
 formatter.match({
@@ -127,7 +127,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 6832671733,
+  "duration": 7093028881,
   "status": "passed"
 });
 formatter.match({
@@ -144,7 +144,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7408859588,
+  "duration": 7485093517,
   "status": "passed"
 });
 formatter.match({
@@ -161,7 +161,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7467846064,
+  "duration": 7454903325,
   "status": "passed"
 });
 formatter.match({
@@ -178,7 +178,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 1509853257,
+  "duration": 1511882493,
   "status": "passed"
 });
 formatter.match({
@@ -195,7 +195,7 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 4072466080,
+  "duration": 2385777839,
   "status": "passed"
 });
 formatter.match({
@@ -212,7 +212,7 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 123888705,
+  "duration": 706779222,
   "status": "passed"
 });
 formatter.match({
@@ -229,7 +229,7 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 170300618,
+  "duration": 172003524,
   "status": "passed"
 });
 formatter.match({
@@ -246,7 +246,7 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 207503746,
+  "duration": 190727862,
   "status": "passed"
 });
 formatter.match({
@@ -263,19 +263,19 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 7174794519,
+  "duration": 7097539287,
   "status": "passed"
 });
 formatter.after({
-  "duration": 451375874,
+  "duration": 443200486,
   "status": "passed"
 });
 formatter.after({
-  "duration": 14797281319,
+  "duration": 14637122967,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2024284013,
+  "duration": 2480016310,
   "status": "passed"
 });
 formatter.scenario({
@@ -370,7 +370,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 2091380816,
+  "duration": 1528426328,
   "status": "passed"
 });
 formatter.match({
@@ -387,7 +387,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 6874415745,
+  "duration": 6901496627,
   "status": "passed"
 });
 formatter.match({
@@ -404,7 +404,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7384411317,
+  "duration": 6936503207,
   "status": "passed"
 });
 formatter.match({
@@ -421,7 +421,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7427713731,
+  "duration": 7392707284,
   "status": "passed"
 });
 formatter.match({
@@ -438,7 +438,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7783460087,
+  "duration": 7067912671,
   "status": "passed"
 });
 formatter.match({
@@ -455,7 +455,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 1508969128,
+  "duration": 1501032336,
   "status": "passed"
 });
 formatter.match({
@@ -472,7 +472,7 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 10849847112,
+  "duration": 9815766378,
   "status": "passed"
 });
 formatter.match({
@@ -489,7 +489,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 233052170,
+  "duration": 188876144,
   "status": "passed"
 });
 formatter.match({
@@ -506,7 +506,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 4575198216,
+  "duration": 4561301267,
   "status": "passed"
 });
 formatter.match({
@@ -523,7 +523,7 @@ formatter.match({
   "location": "Contact.updateContactText(String,String)"
 });
 formatter.result({
-  "duration": 14632551726,
+  "duration": 13157896509,
   "status": "passed"
 });
 formatter.match({
@@ -540,7 +540,7 @@ formatter.match({
   "location": "Contact.updateContactText(String,String)"
 });
 formatter.result({
-  "duration": 14395722816,
+  "duration": 9512795565,
   "status": "passed"
 });
 formatter.match({
@@ -557,7 +557,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 954137336,
+  "duration": 924784714,
   "status": "passed"
 });
 formatter.match({
@@ -574,7 +574,7 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 7844353823,
+  "duration": 2929303880,
   "status": "passed"
 });
 formatter.match({
@@ -591,19 +591,19 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 114257906,
+  "duration": 219388530,
   "status": "passed"
 });
 formatter.after({
-  "duration": 437674262,
+  "duration": 438489189,
   "status": "passed"
 });
 formatter.after({
-  "duration": 14670806103,
+  "duration": 14651333152,
   "status": "passed"
 });
 formatter.before({
-  "duration": 1938830406,
+  "duration": 1842953988,
   "status": "passed"
 });
 formatter.scenario({
@@ -669,7 +669,7 @@ formatter.match({
   "location": "Contact.noFavorites(String)"
 });
 formatter.result({
-  "duration": 5556002002,
+  "duration": 5522591314,
   "status": "passed"
 });
 formatter.match({
@@ -686,7 +686,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 781625290,
+  "duration": 592134888,
   "status": "passed"
 });
 formatter.match({
@@ -703,7 +703,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 6749673466,
+  "duration": 6960602259,
   "status": "passed"
 });
 formatter.match({
@@ -720,7 +720,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7736763128,
+  "duration": 7712520589,
   "status": "passed"
 });
 formatter.match({
@@ -737,7 +737,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7725502227,
+  "duration": 7498654492,
   "status": "passed"
 });
 formatter.match({
@@ -754,7 +754,7 @@ formatter.match({
   "location": "Contact.placeContactText(String,String)"
 });
 formatter.result({
-  "duration": 7019991265,
+  "duration": 7836955937,
   "status": "passed"
 });
 formatter.match({
@@ -771,7 +771,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 1497299398,
+  "duration": 1461301462,
   "status": "passed"
 });
 formatter.match({
@@ -788,7 +788,7 @@ formatter.match({
   "location": "Contact.selectContactIcon(String,String)"
 });
 formatter.result({
-  "duration": 3723028499,
+  "duration": 7643430419,
   "status": "passed"
 });
 formatter.match({
@@ -805,15 +805,15 @@ formatter.match({
   "location": "Contact.contactCreationAssertions(String,String)"
 });
 formatter.result({
-  "duration": 7778966502,
+  "duration": 7672630610,
   "status": "passed"
 });
 formatter.after({
-  "duration": 474342338,
+  "duration": 423828464,
   "status": "passed"
 });
 formatter.after({
-  "duration": 12766210014,
+  "duration": 12821219998,
   "status": "passed"
 });
 });

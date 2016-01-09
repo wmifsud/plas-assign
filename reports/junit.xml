@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="229.7231">
-<testcase classname="Contact" name="Create new contact" time="62.172629">
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="219.308085">
+<testcase classname="Contact" name="Create new contact" time="61.111231">
 <system-out><![CDATA[Given I select create new contact icon......................................passed
 And I enter testing123 as Name..............................................passed
 And I enter w@w.com as Email................................................passed
@@ -13,7 +13,7 @@ Then w@w.com is set to Home.................................................pass
 Then testing123 is set to All contacts......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Contact" name="Search for contact" time="103.802236">
+<testcase classname="Contact" name="Search for contact" time="90.20803">
 <system-out><![CDATA[Given I select create new contact icon......................................passed
 And I enter testing123 as Name..............................................passed
 And I enter w@w.com as Email................................................passed
@@ -30,7 +30,7 @@ Then test456ing is set to contact name......................................pass
 Then 35699999999 is set to Mobile...........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Contact" name="Favorites functionality" time="63.748235">
+<testcase classname="Contact" name="Favorites functionality" time="67.988824">
 <system-out><![CDATA[Given I check that there are No favorites...................................passed
 And I select create new contact icon........................................passed
 And I enter testing123 as Name..............................................passed
